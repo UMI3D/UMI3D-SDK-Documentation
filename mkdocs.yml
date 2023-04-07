@@ -19,7 +19,7 @@ theme:
   name: material
   language: en
   favicon: img/favicon.ico
-  logo: img/umi3d-logo.png
+  logo: img/UMI3D-logo.png
 
 
   palette:
