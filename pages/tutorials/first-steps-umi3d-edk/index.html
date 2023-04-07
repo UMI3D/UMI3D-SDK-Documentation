@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://umi3d.fr/pages/tutorials/first-steps-umi3d-edk/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Tutorial: First steps with the UMI3D Environment Development Kit - UMI3D Documentation</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">UMI3D Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../home/" class="dropdown-item">Getting Started</a>
+</li>
+                                    
+<li>
+    <a href="../../how-to/home/" class="dropdown-item">How-to guides</a>
+</li>
+                                    
+<li>
+    <a href="../../api-reference/home/" class="dropdown-item">API Reference</a>
+</li>
+                                    
+<li>
+    <a href="../../explanation/home/" class="dropdown-item">Explanations</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="https://umi3d-consortium.org/" class="nav-link">Consortium</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../about/license/" class="dropdown-item">License</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/UMI3D/UMI3D-SDK-Documentation/edit/master/docs/pages/tutorials/first-steps-umi3d-edk.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#tutorial-first-steps-with-the-umi3d-environment-development-kit" class="nav-link">Tutorial: First steps with the UMI3D Environment Development Kit</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#requirements" class="nav-link">Requirements</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#11-set-up-the-server" class="nav-link">1.1  Set up the server</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#12-define-an-environment" class="nav-link">1.2  Define an environment</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#14-add-a-custom-avatar" class="nav-link">1.4 Add a custom avatar</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#15-configure-user-body-tracking" class="nav-link">1.5  Configure user body tracking</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#17-support-audio" class="nav-link">1.7  Support audio</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#18-populate-the-scene-with-a-3d-asset" class="nav-link">1.8  Populate the scene with a 3D asset</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="tutorial-first-steps-with-the-umi3d-environment-development-kit">Tutorial: First steps with the UMI3D Environment Development Kit</h1>
+<p>This tutorial aims to help Unity developers to start creating Collaborative Virtual Environments with the UMI3D SDK. The created Collaborative Virtual Environment is a basic world only containing avatars for the users and one interaction.
+For a more advanced sample, have a look on UMI3D Samples project: https://github.com/UMI3D/UMI3D-Samples </p>
+<p>!!! note
+    Stop</p>
+<h2 id="requirements">Requirements</h2>
+<p>UMI3D Version: 1.1.r.210402+</p>
+<p>Compatible UMI3D Desktop Browser: 1.0.5.210402+</p>
+<p>Compatible UMI3D OpenVR Browser: 1.0.5.210402+</p>
+<h2 id="11-set-up-the-server">1.1  Set up the server</h2>
+<ol>
+<li>Create an empty <code>GameObject</code> and eventually rename it “UMI3DServer”</li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-server-gameobject.png" /></p>
+<ol>
+<li>Add a <code>UMI3DMainThreadDispatcher</code> component to the GameObject</li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-server-dispatcher.png" /></p>
+<ol>
+<li>Add a <code>UMI3DCollaborationServer</code> component to the GameObject</li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-server-component.png" /></p>
+<ol>
+<li>Fill the HttpPort field (e.g. 50203) of the <code>UMI3DCollaborationServer</code> component</li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-server-port.png" /></p>
+<ol>
+<li>Create an Identifier script and paste the code below inside.</li>
+</ol>
+<pre><code class="language-cs">using System.Collections;
+using System.Collections.Generic;
+using umi3d.common;
+using umi3d.common.collaboration;
+using umi3d.edk.collaboration;
+using UnityEngine;
+
+[CreateAssetMenu(fileName = &quot;identifier&quot;, menuName = &quot;UMI3D/Identifier&quot;)]
+public class identifier : IdentifierApi
+{
+    public string pin = &quot;0000&quot;;
+
+    ///&lt;inheritdoc/&gt;
+    public override UMI3DAuthenticator GetAuthenticator(ref AuthenticationType type)
+    {
+        if (type != AuthenticationType.Pin) Debug.LogWarning($&quot;PinIdentifierApi does not handle other AuthenticationType than PIN [ignored type : {type}]&quot;);
+        //type = AuthenticationType.Pin;
+        return new UMI3DAuthenticator(pin);
+    }
+}
+</code></pre>
+<ol>
+<li>Create an <code>Identifier</code> asset in the Script folder</li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-server-identifier.png" /></p>
+<ol>
+<li>Assign the created Identifier to the Identifier field of the UMI3DCollaborationServer component</li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-server-identifier-assign.png" /></p>
+<ol>
+<li>Create an empty <code>GameObject</code> and eventually rename it “UMI3DLauncher”</li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-launcher-gameobject.png" /></p>
+<ol>
+<li>Add a <code>UMI3DLauncher</code> component to the GameObject</li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-launcher-componenent.png" /></p>
+<ol>
+<li>Tick the Launch Server On Start option</li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-launcher-tick-start.png" /></p>
+<h2 id="12-define-an-environment">1.2  Define an environment</h2>
+<ol>
+<li>Create an empty <code>GameObject</code> and eventually rename it “UMI3DEnv”.</li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-environment-gameobject.png" /></p>
+<ol>
+<li>Add a <code>UMI3DCollaborationEnvironment</code> component to the GameObject</li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-environment-component.png" /></p>
+<ol>
+<li>Fill the Environment Name field as wanted (testGPR in the screenshot)</li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-environment-name.png" /></p>
+<ol>
+<li>Create an empty <code>GameObject</code> under the UMI3DEnv <code>GameObject</code> and eventually rename it “Scene”</li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-environment-scene.png" /></p>
+<ol>
+<li>Add a <code>UMI3DScene</code> component to this new <code>GameObject</code></li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-environment-scene-component.png" /></p>
+<ol>
+<li>Create an empty <code>GameObject</code> under the UMI3DEnv GameObject and eventually rename it “SceneEmbo ”</li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-environment-scene-embodiment.png" /></p>
+<ol>
+<li>Add a <code>UMI3DScene</code> component to this new <code>GameObject</code></li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-environment-scene-embodiment-componenent.png" /></p>
+<h2 id="14-add-a-custom-avatar">1.4 Add a custom avatar</h2>
+<ol>
+<li>Create a empty <code>GameObject</code> and eventually rename it “Perso”</li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-perso.png" /></p>
+<ol>
+<li>Add a <code>UMI3DModel</code> component to the GameObject</li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-model.png" /></p>
+<ol>
+<li>
+<p>Set the size of Variants to 1, select Unity_standalone and add the path where the AssetBundle is. In order to have a visual representation of the avatar on the environment, I added the “LoadBundle” component.</p>
+</li>
+<li>
+<p>Create a prefab of the whole asset in the Prefab folder and remove it from the scene.</p>
+</li>
+</ol>
+<h2 id="15-configure-user-body-tracking">1.5  Configure user body tracking</h2>
+<ol>
+<li>Create an empty <code>GameObject</code> and eventually rename it “UMI3DEmboManager”</li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-embodiment-manager.png" /></p>
+<ol>
+<li>Add a <code>UMI3DEmbodimentManager</code> component to this new <code>GameObject</code></li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-embodiment-manager-component.png" /></p>
+<ol>
+<li>Assign the <code>UMI3DScene</code> of the <code>GameObject</code> "SceneEmbo“ to the Embodiments Scene field of the <code>UMI3DEmbodimentManager</code> component</li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-embodiment-scene-assign.png" /></p>
+<ol>
+<li>Create an AvatarManager script and paste the code below inside.</li>
+</ol>
+<pre><code class="language-cs">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using umi3d.edk;
+using umi3d.common.userCapture;
+using umi3d.edk.userCapture;
+using System;
+using umi3d.common;
+
+public class AvatarManager : MonoBehaviour
+{
+    public GameObject modelPrefab;
+
+    //Attacher un objet aux 
+    static public Dictionary&lt;String, GameObject&gt; avtBones = new Dictionary&lt;String, GameObject&gt;();
+    static public Dictionary&lt;String, UMI3DModel&gt; avtModele = new Dictionary&lt;String, UMI3DModel&gt;();
+    static public Dictionary&lt;UMI3DUserEmbodimentBone, UMI3DBinding&gt; avtBind = new Dictionary&lt;UMI3DUserEmbodimentBone, UMI3DBinding&gt;();
+    public List&lt;bindList&gt; listBindList = new List&lt;bindList&gt;();
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        UMI3DEmbodimentManager.Instance.CreationEvent.AddListener(CreateBone);
+        UMI3DEmbodimentManager.Instance.UpdateEvent.AddListener(UpdateBone);
+        UMI3DEmbodimentManager.Instance.DeletionEvent.AddListener(DeleteBone);
+        UMI3DEmbodimentManager.Instance.NewEmbodiment.AddListener(InstanciateEmbodiment);
+    }
+
+    protected void InstanciateEmbodiment(UMI3DAvatarNode AvatarNode)
+    {
+        GameObject go = GameObject.Instantiate(modelPrefab, AvatarNode.transform);
+        go.transform.localPosition = new Vector3(0, -1.60f, 0);
+        LoadEntity le = go.GetComponent&lt;UMI3DModel&gt;().GetLoadEntity();
+        List&lt;Operation&gt; lop = new List&lt;Operation&gt;();
+        lop.Add(le);
+        avtModele.Add(AvatarNode.userId, go.GetComponent&lt;UMI3DModel&gt;());
+        UMI3DServer.Dispatch(new Transaction() { Operations = lop, reliable = true });
+    }
+
+    protected void DeleteBone(UMI3DUserEmbodimentBone UserEmbodimentBone)
+    {
+        GameObject go = avtBones[UserEmbodimentBone.boneType];
+        Destroy(go);
+        avtBones.Remove(UserEmbodimentBone.boneType);
+    }
+
+    protected void UpdateBone(UMI3DUserEmbodimentBone UserEmbodimentBone)
+    {
+        GameObject go = avtBones[UserEmbodimentBone.boneType];
+        go.transform.localPosition = UserEmbodimentBone.spatialPosition.localPosition;
+        go.transform.localRotation = UserEmbodimentBone.spatialPosition.localRotation;
+    }
+
+    protected void CreateBone(UMI3DUserEmbodimentBone UserEmbodimentBone)
+    {
+
+        String id = UserEmbodimentBone.userId;
+        UMI3DAvatarNode avnode = UMI3DEmbodimentManager.Instance.embodimentInstances[id];
+        GameObject go = new GameObject(&quot;Bone:&quot; + UserEmbodimentBone.boneType);
+        go.transform.parent = avnode.transform;
+        go.transform.localPosition = UserEmbodimentBone.spatialPosition.localPosition;
+        go.transform.localRotation = UserEmbodimentBone.spatialPosition.localRotation;
+        avtBones.Add(UserEmbodimentBone.boneType, go);
+        bindList bl = listBindList[0];
+        foreach (bind b in bl.bList)
+        {
+            UMI3DBinding binding = new UMI3DBinding()
+            {
+                boneType = b.boneType,
+                rigName = b.rigName,
+                offsetRotation = Quaternion.Euler(b.rotationOffset),
+                offsetPosition = b.positionOffset,
+                node = avtModele[id]
+            };
+
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    [System.Serializable]
+    public class bind
+    {
+        [ConstStringEnum(typeof(BoneType))]
+        public String boneType;
+        public String rigName;
+        public Vector3 positionOffset;
+        public Vector3 rotationOffset;
+
+    }
+    [System.Serializable]
+    public class bindList
+    {
+        public List&lt;bind&gt; bList = new List&lt;bind&gt;();
+    }
+}
+</code></pre>
+<ol>
+<li>Add a <code>AvatarManager</code> component (with the created script) to the “UMI3DEmboManager” <code>GameObject</code></li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-embodiment-avatar-manager.png" /></p>
+<ol>
+<li>Add the « X » prefab in the modelPrefab field of the AvatarManager component</li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-embodiment-prefab.png" /></p>
+<ol>
+<li>Set the size of List Bind List to 1, the size of B List to 1, choose “head” as a BoneType and set the name of the corresponding Bone in the model's structure (“Head” in our case) </li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-embodiment-bind.png" /></p>
+<h2 id="17-support-audio">1.7  Support audio</h2>
+<ol>
+<li>Create an empty <code>GameObject</code> and eventually name it “UMI3DAudio” </li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-audio-gameobject.png" /></p>
+<ol>
+<li>Add a <code>UMI3DAudioBridger</code> component to the <code>GameObject</code></li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-audio-bridger.png" /></p>
+<h2 id="18-populate-the-scene-with-a-3d-asset">1.8  Populate the scene with a 3D asset</h2>
+<ol>
+<li>Create an empty <code>GameObject</code> and eventually name it “obj1” under the “scene” <code>GameObject</code></li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-model-gameobject.png" />  </p>
+<ol>
+<li>Add a <code>UMI3DModel</code> component to this new <code>GameObject</code></li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-model-component.png" /></p>
+<ol>
+<li>Select the path of the object, its format and its extension in the corresponding fields</li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-model-path.png" /></p>
+<ol>
+<li>Add a <code>UMI3DEvent</code> component to the “obj1” GameObject</li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-model-event.png" /></p>
+<ol>
+<li>Add a <code>StringParameter</code> component to the “obj1” GameObject</li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-model-event-string.png" /></p>
+<ol>
+<li>Add a <code>UMI3DInteractable</code> component to the “obj1” GameObject</li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-model-interactable.png" /></p>
+<ol>
+<li>Add a <code>UMI3DManipulation</code> component to the “obj1” GameObject</li>
+</ol>
+<p><img alt="image.png" src="/img/first-steps-model-manipulation.png" /></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright 2018-2023 UMI3D Consortium</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

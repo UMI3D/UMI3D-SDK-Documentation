@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://umi3d.fr/pages/how-to/create-asset-bundles/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Create asset bundles - UMI3D Documentation</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">UMI3D Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../tutorials/home/" class="dropdown-item">Getting Started</a>
+</li>
+                                    
+<li>
+    <a href="../home/" class="dropdown-item">How-to guides</a>
+</li>
+                                    
+<li>
+    <a href="../../api-reference/home/" class="dropdown-item">API Reference</a>
+</li>
+                                    
+<li>
+    <a href="../../explanation/home/" class="dropdown-item">Explanations</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="https://umi3d-consortium.org/" class="nav-link">Consortium</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../about/license/" class="dropdown-item">License</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/UMI3D/UMI3D-SDK-Documentation/edit/master/docs/pages/how-to/create-asset-bundles.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#1-prerequisite-creating-unity-assetbundles" class="nav-link">1    Prerequisite: Creating Unity AssetBundles</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="1-prerequisite-creating-unity-assetbundles">1    Prerequisite: Creating Unity AssetBundles</h2>
+<h3 id="11-creating-an-assetbundle-from-a-fbx-file">1.1 Creating an AssetBundle from a FBX file</h3>
+<ol>
+<li>Create an "AssetBundle" folder, an "Editor" folder and a "FBX” folder
+<img alt="image.png" src="/.attachments/image-fefbfa30-d2ae-4617-b05d-b6962266acb4.png" /></li>
+<li>Create a BuildAssetBundle script in the Editor folder and paste the code below inside</li>
+</ol>
+<pre><code class="language-cs">using System.Collections;
+using System.Collections.Generic;
+using UnityEditor;
+using UnityEngine;
+
+public class BuildAssetBundle : Editor
+{
+    [MenuItem(&quot;Assets/ Build AssetBundles&quot;)]
+
+    static void BuildAllAsseetBundles()
+    {
+        BuildPipeline.BuildAssetBundles(@&quot;D:\Dev\UMI3DTutorial\UMI3DTutorial\Assets\Project\Models\AssetBundles&quot;, BuildAssetBundleOptions.ChunkBasedCompression, BuildTarget.StandaloneWindows64);
+    }
+}
+</code></pre>
+<ol>
+<li>Replace the path in the code so that it references the path of your “AssetBundle” folder</li>
+<li>Copy your FBX file in the “FBX” folder
+<img alt="image.png" src="/.attachments/image-a825e4bb-06cb-458b-af27-5674cec9c846.png" /></li>
+<li>Select your FBX file and at the bottom of the Inspector view, select “New” in the AssetBundle drop down menu, and give the bundle a name (“avatar” here)
+<img alt="image.png" src="/.attachments/image-3b17759a-b5df-41c0-b6aa-ccbbb9a29cd3.png" /></li>
+<li>With the FBX file selected, open the “Assets” menu and click on “Build AssetBundles”
+<img alt="image.png" src="/.attachments/image-3c00b83d-1066-4037-b8ea-8612979ca110.png" /></li>
+<li>When the build is over, the file will be available in your “AssetBundle” folder
+<img alt="image.png" src="/.attachments/image-81290464-a53e-445f-a53d-c913e1394c15.png" /></li>
+<li>In order to load the AssetBundles, create a <code>LoadBundle</code> script and paste the code below inside</li>
+</ol>
+<pre><code class="language-cs">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class LoadBundle : MonoBehaviour
+{
+    AssetBundle myLoadAssetBundle;
+    public string path;
+    public string objName;
+    void Start()
+    {
+        LoadAssetBundle(path);
+        InstantiatedObjectFromBundle(objName);
+    }
+    void LoadAssetBundle(string bundleUrl)
+    {
+        myLoadAssetBundle = AssetBundle.LoadFromFile(bundleUrl);
+
+        if (myLoadAssetBundle != null)
+        {
+            foreach (string n in myLoadAssetBundle.GetAllAssetNames())
+            {
+                Debug.Log(&quot;nom=&quot; + n);
+            }
+        }
+        Debug.Log(myLoadAssetBundle == null ? &quot;Failed to load AssetBundle &quot; : &quot;Load AssetBundle OK&quot;);
+    }
+
+    void InstantiatedObjectFromBundle(string assetName)
+    {
+        var prefab = myLoadAssetBundle.LoadAsset(assetName);
+        Instantiate(prefab);
+    }
+}
+</code></pre>
+<p>This script loads the file form the path of the folder and the asset’s name. To know the name of the bundle, a debug is visible on the console window, with all the available names
+<img alt="image.png" src="/.attachments/image-41cbf074-940a-4afe-8522-49d5ff960a04.png" /></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright 2018-2023 UMI3D Consortium</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
