@@ -453,9 +453,11 @@
 
 <h1 id="tutorial-first-steps-with-the-umi3d-environment-development-kit">Tutorial: First steps with the UMI3D Environment Development Kit</h1>
 <p>This tutorial aims to help Unity developers to start creating Collaborative Virtual Environments with the UMI3D SDK. The created Collaborative Virtual Environment is a basic world only containing avatars for the users and one interaction.
-For a more advanced sample, have a look on UMI3D Samples project: https://github.com/UMI3D/UMI3D-Samples </p>
-<p>!!! note
-    Stop</p>
+For a more advanced sample, have a look on the <a href="https://github.com/UMI3D/UMI3D-Samples">UMI3D Samples project</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>This tutorial is old and need to be updated.</p>
+</div>
 <h2 id="requirements">Requirements</h2>
 <p>UMI3D Version: 1.1.r.210402+</p>
 <p>Compatible UMI3D Desktop Browser: 1.0.5.210402+</p>
@@ -480,27 +482,27 @@ For a more advanced sample, have a look on UMI3D Samples project: https://github
 <ol>
 <li>Create an Identifier script and paste the code below inside.</li>
 </ol>
-<pre><code class="language-cs">using System.Collections;
-using System.Collections.Generic;
-using umi3d.common;
-using umi3d.common.collaboration;
-using umi3d.edk.collaboration;
-using UnityEngine;
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">System.Collections</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">umi3d.common</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">umi3d.common.collaboration</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">umi3d.edk.collaboration</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
 
-[CreateAssetMenu(fileName = &quot;identifier&quot;, menuName = &quot;UMI3D/Identifier&quot;)]
-public class identifier : IdentifierApi
-{
-    public string pin = &quot;0000&quot;;
+<span class="na">[CreateAssetMenu(fileName = &quot;identifier&quot;, menuName = &quot;UMI3D/Identifier&quot;)]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">identifier</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IdentifierApi</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">pin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0000&quot;</span><span class="p">;</span>
 
-    ///&lt;inheritdoc/&gt;
-    public override UMI3DAuthenticator GetAuthenticator(ref AuthenticationType type)
-    {
-        if (type != AuthenticationType.Pin) Debug.LogWarning($&quot;PinIdentifierApi does not handle other AuthenticationType than PIN [ignored type : {type}]&quot;);
-        //type = AuthenticationType.Pin;
-        return new UMI3DAuthenticator(pin);
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="c1">///&lt;inheritdoc/&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">UMI3DAuthenticator</span><span class="w"> </span><span class="nf">GetAuthenticator</span><span class="p">(</span><span class="k">ref</span><span class="w"> </span><span class="n">AuthenticationType</span><span class="w"> </span><span class="n">type</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">type</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">AuthenticationType</span><span class="p">.</span><span class="n">Pin</span><span class="p">)</span><span class="w"> </span><span class="n">Debug</span><span class="p">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s">$&quot;PinIdentifierApi does not handle other AuthenticationType than PIN [ignored type : {type}]&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">//type = AuthenticationType.Pin;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">UMI3DAuthenticator</span><span class="p">(</span><span class="n">pin</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <ol>
 <li>Create an <code>Identifier</code> asset in the Script folder</li>
 </ol>
@@ -581,111 +583,113 @@ public class identifier : IdentifierApi
 </ol>
 <p><img alt="image.png" src="/img/first-steps-embodiment-scene-assign.png" /></p>
 <ol>
-<li>Create an AvatarManager script and paste the code below inside.</li>
-</ol>
-<pre><code class="language-cs">using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using umi3d.edk;
-using umi3d.common.userCapture;
-using umi3d.edk.userCapture;
-using System;
-using umi3d.common;
+<li>
+<p>Create an AvatarManager script and paste the code below inside.
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">System.Collections</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">umi3d.edk</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">umi3d.common.userCapture</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">umi3d.edk.userCapture</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">umi3d.common</span><span class="p">;</span>
 
-public class AvatarManager : MonoBehaviour
-{
-    public GameObject modelPrefab;
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">AvatarManager</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">MonoBehaviour</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">GameObject</span><span class="w"> </span><span class="n">modelPrefab</span><span class="p">;</span>
 
-    //Attacher un objet aux 
-    static public Dictionary&lt;String, GameObject&gt; avtBones = new Dictionary&lt;String, GameObject&gt;();
-    static public Dictionary&lt;String, UMI3DModel&gt; avtModele = new Dictionary&lt;String, UMI3DModel&gt;();
-    static public Dictionary&lt;UMI3DUserEmbodimentBone, UMI3DBinding&gt; avtBind = new Dictionary&lt;UMI3DUserEmbodimentBone, UMI3DBinding&gt;();
-    public List&lt;bindList&gt; listBindList = new List&lt;bindList&gt;();
+<span class="w">    </span><span class="c1">//Attacher un objet aux </span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">GameObject</span><span class="o">&gt;</span><span class="w"> </span><span class="n">avtBones</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">GameObject</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">UMI3DModel</span><span class="o">&gt;</span><span class="w"> </span><span class="n">avtModele</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">UMI3DModel</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">UMI3DUserEmbodimentBone</span><span class="p">,</span><span class="w"> </span><span class="n">UMI3DBinding</span><span class="o">&gt;</span><span class="w"> </span><span class="n">avtBind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">UMI3DUserEmbodimentBone</span><span class="p">,</span><span class="w"> </span><span class="n">UMI3DBinding</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">bindList</span><span class="o">&gt;</span><span class="w"> </span><span class="n">listBindList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">bindList</span><span class="o">&gt;</span><span class="p">();</span>
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        UMI3DEmbodimentManager.Instance.CreationEvent.AddListener(CreateBone);
-        UMI3DEmbodimentManager.Instance.UpdateEvent.AddListener(UpdateBone);
-        UMI3DEmbodimentManager.Instance.DeletionEvent.AddListener(DeleteBone);
-        UMI3DEmbodimentManager.Instance.NewEmbodiment.AddListener(InstanciateEmbodiment);
-    }
+<span class="w">    </span><span class="c1">// Start is called before the first frame update</span>
+<span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">Start</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">UMI3DEmbodimentManager</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">CreationEvent</span><span class="p">.</span><span class="n">AddListener</span><span class="p">(</span><span class="n">CreateBone</span><span class="p">);</span>
+<span class="w">        </span><span class="n">UMI3DEmbodimentManager</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">UpdateEvent</span><span class="p">.</span><span class="n">AddListener</span><span class="p">(</span><span class="n">UpdateBone</span><span class="p">);</span>
+<span class="w">        </span><span class="n">UMI3DEmbodimentManager</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">DeletionEvent</span><span class="p">.</span><span class="n">AddListener</span><span class="p">(</span><span class="n">DeleteBone</span><span class="p">);</span>
+<span class="w">        </span><span class="n">UMI3DEmbodimentManager</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">NewEmbodiment</span><span class="p">.</span><span class="n">AddListener</span><span class="p">(</span><span class="n">InstanciateEmbodiment</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    protected void InstanciateEmbodiment(UMI3DAvatarNode AvatarNode)
-    {
-        GameObject go = GameObject.Instantiate(modelPrefab, AvatarNode.transform);
-        go.transform.localPosition = new Vector3(0, -1.60f, 0);
-        LoadEntity le = go.GetComponent&lt;UMI3DModel&gt;().GetLoadEntity();
-        List&lt;Operation&gt; lop = new List&lt;Operation&gt;();
-        lop.Add(le);
-        avtModele.Add(AvatarNode.userId, go.GetComponent&lt;UMI3DModel&gt;());
-        UMI3DServer.Dispatch(new Transaction() { Operations = lop, reliable = true });
-    }
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">InstanciateEmbodiment</span><span class="p">(</span><span class="n">UMI3DAvatarNode</span><span class="w"> </span><span class="n">AvatarNode</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">GameObject</span><span class="w"> </span><span class="n">go</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GameObject</span><span class="p">.</span><span class="n">Instantiate</span><span class="p">(</span><span class="n">modelPrefab</span><span class="p">,</span><span class="w"> </span><span class="n">AvatarNode</span><span class="p">.</span><span class="n">transform</span><span class="p">);</span>
+<span class="w">        </span><span class="n">go</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">localPosition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="m">1.60f</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">);</span>
+<span class="w">        </span><span class="n">LoadEntity</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">go</span><span class="p">.</span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">UMI3DModel</span><span class="o">&gt;</span><span class="p">().</span><span class="n">GetLoadEntity</span><span class="p">();</span>
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Operation</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Operation</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">lop</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">le</span><span class="p">);</span>
+<span class="w">        </span><span class="n">avtModele</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">AvatarNode</span><span class="p">.</span><span class="n">userId</span><span class="p">,</span><span class="w"> </span><span class="n">go</span><span class="p">.</span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">UMI3DModel</span><span class="o">&gt;</span><span class="p">());</span>
+<span class="w">        </span><span class="n">UMI3DServer</span><span class="p">.</span><span class="n">Dispatch</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Transaction</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Operations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lop</span><span class="p">,</span><span class="w"> </span><span class="n">reliable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
 
-    protected void DeleteBone(UMI3DUserEmbodimentBone UserEmbodimentBone)
-    {
-        GameObject go = avtBones[UserEmbodimentBone.boneType];
-        Destroy(go);
-        avtBones.Remove(UserEmbodimentBone.boneType);
-    }
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">DeleteBone</span><span class="p">(</span><span class="n">UMI3DUserEmbodimentBone</span><span class="w"> </span><span class="n">UserEmbodimentBone</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">GameObject</span><span class="w"> </span><span class="n">go</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">avtBones</span><span class="p">[</span><span class="n">UserEmbodimentBone</span><span class="p">.</span><span class="n">boneType</span><span class="p">];</span>
+<span class="w">        </span><span class="n">Destroy</span><span class="p">(</span><span class="n">go</span><span class="p">);</span>
+<span class="w">        </span><span class="n">avtBones</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="n">UserEmbodimentBone</span><span class="p">.</span><span class="n">boneType</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    protected void UpdateBone(UMI3DUserEmbodimentBone UserEmbodimentBone)
-    {
-        GameObject go = avtBones[UserEmbodimentBone.boneType];
-        go.transform.localPosition = UserEmbodimentBone.spatialPosition.localPosition;
-        go.transform.localRotation = UserEmbodimentBone.spatialPosition.localRotation;
-    }
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">UpdateBone</span><span class="p">(</span><span class="n">UMI3DUserEmbodimentBone</span><span class="w"> </span><span class="n">UserEmbodimentBone</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">GameObject</span><span class="w"> </span><span class="n">go</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">avtBones</span><span class="p">[</span><span class="n">UserEmbodimentBone</span><span class="p">.</span><span class="n">boneType</span><span class="p">];</span>
+<span class="w">        </span><span class="n">go</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">localPosition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UserEmbodimentBone</span><span class="p">.</span><span class="n">spatialPosition</span><span class="p">.</span><span class="n">localPosition</span><span class="p">;</span>
+<span class="w">        </span><span class="n">go</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">localRotation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UserEmbodimentBone</span><span class="p">.</span><span class="n">spatialPosition</span><span class="p">.</span><span class="n">localRotation</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    protected void CreateBone(UMI3DUserEmbodimentBone UserEmbodimentBone)
-    {
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">CreateBone</span><span class="p">(</span><span class="n">UMI3DUserEmbodimentBone</span><span class="w"> </span><span class="n">UserEmbodimentBone</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
 
-        String id = UserEmbodimentBone.userId;
-        UMI3DAvatarNode avnode = UMI3DEmbodimentManager.Instance.embodimentInstances[id];
-        GameObject go = new GameObject(&quot;Bone:&quot; + UserEmbodimentBone.boneType);
-        go.transform.parent = avnode.transform;
-        go.transform.localPosition = UserEmbodimentBone.spatialPosition.localPosition;
-        go.transform.localRotation = UserEmbodimentBone.spatialPosition.localRotation;
-        avtBones.Add(UserEmbodimentBone.boneType, go);
-        bindList bl = listBindList[0];
-        foreach (bind b in bl.bList)
-        {
-            UMI3DBinding binding = new UMI3DBinding()
-            {
-                boneType = b.boneType,
-                rigName = b.rigName,
-                offsetRotation = Quaternion.Euler(b.rotationOffset),
-                offsetPosition = b.positionOffset,
-                node = avtModele[id]
-            };
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UserEmbodimentBone</span><span class="p">.</span><span class="n">userId</span><span class="p">;</span>
+<span class="w">        </span><span class="n">UMI3DAvatarNode</span><span class="w"> </span><span class="n">avnode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UMI3DEmbodimentManager</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">embodimentInstances</span><span class="p">[</span><span class="n">id</span><span class="p">];</span>
+<span class="w">        </span><span class="n">GameObject</span><span class="w"> </span><span class="n">go</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">GameObject</span><span class="p">(</span><span class="s">&quot;Bone:&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">UserEmbodimentBone</span><span class="p">.</span><span class="n">boneType</span><span class="p">);</span>
+<span class="w">        </span><span class="n">go</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">avnode</span><span class="p">.</span><span class="n">transform</span><span class="p">;</span>
+<span class="w">        </span><span class="n">go</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">localPosition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UserEmbodimentBone</span><span class="p">.</span><span class="n">spatialPosition</span><span class="p">.</span><span class="n">localPosition</span><span class="p">;</span>
+<span class="w">        </span><span class="n">go</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">localRotation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UserEmbodimentBone</span><span class="p">.</span><span class="n">spatialPosition</span><span class="p">.</span><span class="n">localRotation</span><span class="p">;</span>
+<span class="w">        </span><span class="n">avtBones</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">UserEmbodimentBone</span><span class="p">.</span><span class="n">boneType</span><span class="p">,</span><span class="w"> </span><span class="n">go</span><span class="p">);</span>
+<span class="w">        </span><span class="n">bindList</span><span class="w"> </span><span class="n">bl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listBindList</span><span class="p">[</span><span class="m">0</span><span class="p">];</span>
+<span class="w">        </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">bind</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">bl</span><span class="p">.</span><span class="n">bList</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">UMI3DBinding</span><span class="w"> </span><span class="n">binding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UMI3DBinding</span><span class="p">()</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">boneType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">boneType</span><span class="p">,</span>
+<span class="w">                </span><span class="n">rigName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">rigName</span><span class="p">,</span>
+<span class="w">                </span><span class="n">offsetRotation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Quaternion</span><span class="p">.</span><span class="n">Euler</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">rotationOffset</span><span class="p">),</span>
+<span class="w">                </span><span class="n">offsetPosition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">positionOffset</span><span class="p">,</span>
+<span class="w">                </span><span class="n">node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">avtModele</span><span class="p">[</span><span class="n">id</span><span class="p">]</span>
+<span class="w">            </span><span class="p">};</span>
 
-        }
-    }
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // Update is called once per frame
-    void Update()
-    {
+<span class="w">    </span><span class="c1">// Update is called once per frame</span>
+<span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">Update</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
 
-    }
+<span class="w">    </span><span class="p">}</span>
 
-    [System.Serializable]
-    public class bind
-    {
-        [ConstStringEnum(typeof(BoneType))]
-        public String boneType;
-        public String rigName;
-        public Vector3 positionOffset;
-        public Vector3 rotationOffset;
+<span class="w">    </span><span class="na">[System.Serializable]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">bind</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="na">[ConstStringEnum(typeof(BoneType))]</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">boneType</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">rigName</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">Vector3</span><span class="w"> </span><span class="n">positionOffset</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">Vector3</span><span class="w"> </span><span class="n">rotationOffset</span><span class="p">;</span>
 
-    }
-    [System.Serializable]
-    public class bindList
-    {
-        public List&lt;bind&gt; bList = new List&lt;bind&gt;();
-    }
-}
-</code></pre>
-<ol>
-<li>Add a <code>AvatarManager</code> component (with the created script) to the “UMI3DEmboManager” <code>GameObject</code></li>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="na">[System.Serializable]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">bindList</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">bind</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">bind</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Add a <code>AvatarManager</code> component (with the created script) to the “UMI3DEmboManager” <code>GameObject</code></p>
+</li>
 </ol>
 <p><img alt="image.png" src="/img/first-steps-embodiment-avatar-manager.png" /></p>
 <ol>

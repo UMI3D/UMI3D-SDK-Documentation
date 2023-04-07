@@ -420,61 +420,63 @@
 <p>Here is a short guide on how to change an asset properties. For example, we will move a 3D asset with a smooth movement using interpolation.</p>
 <h2 id="send-the-proper-umi3d-operation">Send the proper UMI3D operation</h2>
 <ol>
-<li>Add a script referencing the object to move
-<img alt="image.png" src="/img/move-asset-runtime-add-script-component.png" /></li>
-</ol>
-<pre><code class="language-cs">using umi3d.edk;
-using UnityEngine;
+<li>
+<p>Add a script referencing the object to move
+<img alt="image.png" src="/img/move-asset-runtime-add-script-component.png" />
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">umi3d.edk</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
 
-public class MoveBallon : MonoBehaviour
-{
-    UMI3DNode balloonModel;
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MoveBallon</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">MonoBehaviour</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">UMI3DNode</span><span class="w"> </span><span class="n">balloonModel</span><span class="p">;</span>
 
-    public void Start()
-    {
-        balloonModel = GetComponent&lt;UMI3DNode&gt;();
-    }
-}
-</code></pre>
-<ol>
-<li>Create a <code>SetValue</code> operation</li>
-</ol>
-<pre><code class="language-cs">Vector3 newPosition = balloonModel.objectPosition.GetValue() + new Vector3(1, 0, 0);
-SetEntityProperty operation = balloonModel.objectPosition.SetValue(newPosition);
-</code></pre>
-<ol>
-<li>Create a <code>Transaction</code></li>
-</ol>
-<pre><code class="language-cs">Transaction t = new Transaction()
-{
-   reliable = true
-};
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Start</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">balloonModel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">UMI3DNode</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Create a <code>SetValue</code> operation
+<div class="highlight"><pre><span></span><code><span class="n">Vector3</span><span class="w"> </span><span class="n">newPosition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balloonModel</span><span class="p">.</span><span class="n">objectPosition</span><span class="p">.</span><span class="n">GetValue</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Vector3</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">);</span>
+<span class="n">SetEntityProperty</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balloonModel</span><span class="p">.</span><span class="n">objectPosition</span><span class="p">.</span><span class="n">SetValue</span><span class="p">(</span><span class="n">newPosition</span><span class="p">);</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Create a <code>Transaction</code>
+<div class="highlight"><pre><span></span><code><span class="n">Transaction</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Transaction</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">   </span><span class="n">reliable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span>
+<span class="p">};</span>
 
-t.AddIfNotNull(operation);
-</code></pre>
-<ol>
-<li>Dispatch the transaction</li>
+<span class="n">t</span><span class="p">.</span><span class="n">AddIfNotNull</span><span class="p">(</span><span class="n">operation</span><span class="p">);</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Dispatch the transaction
+<div class="highlight"><pre><span></span><code><span class="n">t</span><span class="p">.</span><span class="n">Dispatch</span><span class="p">();</span>
+</code></pre></div></p>
+</li>
 </ol>
-<pre><code class="language-cs">t.Dispatch();
-</code></pre>
 <h2 id="activate-interpolation-on-the-property">Activate interpolation on the property</h2>
-<pre><code class="language-cs">StartInterpolationProperty operation = new StartInterpolationProperty()
-{
-    users = new HashSet&lt;UMI3DUser&gt;(UMI3DCollaborationServer.Collaboration.Users), //send the interpolation to all referenced users
-    property = balloonModel.objectPosition.propertyId, // id of the property to activate interpolation on
-    entityId = balloonModel.objectPosition.entityId,
-    startValue = balloonModel.objectPosition.GetValue()
-};
+<div class="highlight"><pre><span></span><code><span class="n">StartInterpolationProperty</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StartInterpolationProperty</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;</span><span class="n">UMI3DUser</span><span class="o">&gt;</span><span class="p">(</span><span class="n">UMI3DCollaborationServer</span><span class="p">.</span><span class="n">Collaboration</span><span class="p">.</span><span class="n">Users</span><span class="p">),</span><span class="w"> </span><span class="c1">//send the interpolation to all referenced users</span>
+<span class="w">    </span><span class="n">property</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balloonModel</span><span class="p">.</span><span class="n">objectPosition</span><span class="p">.</span><span class="n">propertyId</span><span class="p">,</span><span class="w"> </span><span class="c1">// id of the property to activate interpolation on</span>
+<span class="w">    </span><span class="n">entityId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balloonModel</span><span class="p">.</span><span class="n">objectPosition</span><span class="p">.</span><span class="n">entityId</span><span class="p">,</span>
+<span class="w">    </span><span class="n">startValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balloonModel</span><span class="p">.</span><span class="n">objectPosition</span><span class="p">.</span><span class="n">GetValue</span><span class="p">()</span>
+<span class="p">};</span>
 
-Transaction t = new Transaction()
-{
-    reliable = true
-};
+<span class="n">Transaction</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Transaction</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">reliable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span>
+<span class="p">};</span>
 
-t.Add(operation);
+<span class="n">t</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">operation</span><span class="p">);</span>
 
-t.Dispatch();
-</code></pre>
+<span class="n">t</span><span class="p">.</span><span class="n">Dispatch</span><span class="p">();</span>
+</code></pre></div>
 
 
 

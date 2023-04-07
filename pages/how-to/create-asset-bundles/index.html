@@ -427,24 +427,22 @@
 <ol>
 <li>Create an "AssetBundle" folder, an "Editor" folder and a "FBX” folder
 <img alt="image.png" src="/.attachments/image-fefbfa30-d2ae-4617-b05d-b6962266acb4.png" /></li>
-<li>Create a BuildAssetBundle script in the Editor folder and paste the code below inside</li>
-</ol>
-<pre><code class="language-cs">using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEngine;
+<li>Create a BuildAssetBundle script in the Editor folder and paste the code below inside
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">System.Collections</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEditor</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
 
-public class BuildAssetBundle : Editor
-{
-    [MenuItem(&quot;Assets/ Build AssetBundles&quot;)]
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BuildAssetBundle</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Editor</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[MenuItem(&quot;Assets/ Build AssetBundles&quot;)]</span>
 
-    static void BuildAllAsseetBundles()
-    {
-        BuildPipeline.BuildAssetBundles(@&quot;D:\Dev\UMI3DTutorial\UMI3DTutorial\Assets\Project\Models\AssetBundles&quot;, BuildAssetBundleOptions.ChunkBasedCompression, BuildTarget.StandaloneWindows64);
-    }
-}
-</code></pre>
-<ol>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">BuildAllAsseetBundles</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">BuildPipeline</span><span class="p">.</span><span class="n">BuildAssetBundles</span><span class="p">(</span><span class="s">@&quot;D:\Dev\UMI3DTutorial\UMI3DTutorial\Assets\Project\Models\AssetBundles&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">BuildAssetBundleOptions</span><span class="p">.</span><span class="n">ChunkBasedCompression</span><span class="p">,</span><span class="w"> </span><span class="n">BuildTarget</span><span class="p">.</span><span class="n">StandaloneWindows64</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></li>
 <li>Replace the path in the code so that it references the path of your “AssetBundle” folder</li>
 <li>Copy your FBX file in the “FBX” folder
 <img alt="image.png" src="/.attachments/image-a825e4bb-06cb-458b-af27-5674cec9c846.png" /></li>
@@ -454,45 +452,45 @@ public class BuildAssetBundle : Editor
 <img alt="image.png" src="/.attachments/image-3c00b83d-1066-4037-b8ea-8612979ca110.png" /></li>
 <li>When the build is over, the file will be available in your “AssetBundle” folder
 <img alt="image.png" src="/.attachments/image-81290464-a53e-445f-a53d-c913e1394c15.png" /></li>
-<li>In order to load the AssetBundles, create a <code>LoadBundle</code> script and paste the code below inside</li>
+<li>In order to load the AssetBundles, create a <code>LoadBundle</code> script and paste the code below inside
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">System.Collections</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">LoadBundle</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">MonoBehaviour</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">AssetBundle</span><span class="w"> </span><span class="n">myLoadAssetBundle</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">path</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">objName</span><span class="p">;</span>
+<span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">Start</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">LoadAssetBundle</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
+<span class="w">        </span><span class="n">InstantiatedObjectFromBundle</span><span class="p">(</span><span class="n">objName</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">LoadAssetBundle</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">bundleUrl</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">myLoadAssetBundle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AssetBundle</span><span class="p">.</span><span class="n">LoadFromFile</span><span class="p">(</span><span class="n">bundleUrl</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">myLoadAssetBundle</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">myLoadAssetBundle</span><span class="p">.</span><span class="n">GetAllAssetNames</span><span class="p">())</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&quot;nom=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="n">myLoadAssetBundle</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;Failed to load AssetBundle &quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Load AssetBundle OK&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">InstantiatedObjectFromBundle</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">assetName</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">prefab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">myLoadAssetBundle</span><span class="p">.</span><span class="n">LoadAsset</span><span class="p">(</span><span class="n">assetName</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Instantiate</span><span class="p">(</span><span class="n">prefab</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+This script loads the file form the path of the folder and the asset’s name. To know the name of the bundle, a debug is visible on the console window, with all the available names
+<img alt="image.png" src="/.attachments/image-41cbf074-940a-4afe-8522-49d5ff960a04.png" /></li>
 </ol>
-<pre><code class="language-cs">using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class LoadBundle : MonoBehaviour
-{
-    AssetBundle myLoadAssetBundle;
-    public string path;
-    public string objName;
-    void Start()
-    {
-        LoadAssetBundle(path);
-        InstantiatedObjectFromBundle(objName);
-    }
-    void LoadAssetBundle(string bundleUrl)
-    {
-        myLoadAssetBundle = AssetBundle.LoadFromFile(bundleUrl);
-
-        if (myLoadAssetBundle != null)
-        {
-            foreach (string n in myLoadAssetBundle.GetAllAssetNames())
-            {
-                Debug.Log(&quot;nom=&quot; + n);
-            }
-        }
-        Debug.Log(myLoadAssetBundle == null ? &quot;Failed to load AssetBundle &quot; : &quot;Load AssetBundle OK&quot;);
-    }
-
-    void InstantiatedObjectFromBundle(string assetName)
-    {
-        var prefab = myLoadAssetBundle.LoadAsset(assetName);
-        Instantiate(prefab);
-    }
-}
-</code></pre>
-<p>This script loads the file form the path of the folder and the asset’s name. To know the name of the bundle, a debug is visible on the console window, with all the available names
-<img alt="image.png" src="/.attachments/image-41cbf074-940a-4afe-8522-49d5ff960a04.png" /></p>
 
 
 

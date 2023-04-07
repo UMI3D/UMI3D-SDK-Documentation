@@ -19,7 +19,7 @@
     
     
       
-        <title>Change color asset - UMI3D Documentation</title>
+        <title>How-to : Override the color of an asset - UMI3D Documentation</title>
       
     
     
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Change color asset
+              How-to : Override the color of an asset
             
           </span>
         </div>
@@ -437,37 +437,37 @@
 <p><img alt="image.png" src="/img/change-color-pbr.png" /></p>
 <h2 id="create-a-script-referencing-the-object-and-the-material">Create a script referencing the object and the material</h2>
 <p><img alt="image.png" src="/img/change-color-reference.png" /></p>
-<pre><code class="language-cs">using umi3d.edk;
-using UnityEngine;
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">umi3d.edk</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
 
-public class ChangeBalloonColor : MonoBehaviour
-{
-    UMI3DModel balloonModel;
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ChangeBalloonColor</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">MonoBehaviour</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">UMI3DModel</span><span class="w"> </span><span class="n">balloonModel</span><span class="p">;</span>
 
-    public MaterialSO newMaterial;
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">MaterialSO</span><span class="w"> </span><span class="n">newMaterial</span><span class="p">;</span>
 
-    public void Start()
-    {
-        balloonModel = GetComponent&lt;UMI3DModel&gt;();
-    }
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Start</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">balloonModel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">UMI3DModel</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 
-}
-</code></pre>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="override-the-material">Override the material</h2>
-<pre><code class="language-cs">Operation op;
-if (model.objectMaterialOverriders.GetValue().Count &gt; 0)
-    op = balloonModel.objectMaterialOverriders.SetValue(0, new MaterialOverrider() { overrideAllMaterial = true, newMaterial = newMaterial});
-else
-    op = balloonModel.objectMaterialOverriders.Add(new MaterialOverrider() { overrideAllMaterial = true, newMaterial = newMaterial});
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Operation</span><span class="w"> </span><span class="n">op</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="n">objectMaterialOverriders</span><span class="p">.</span><span class="n">GetValue</span><span class="p">().</span><span class="n">Count</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
+<span class="w">    </span><span class="n">op</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balloonModel</span><span class="p">.</span><span class="n">objectMaterialOverriders</span><span class="p">.</span><span class="n">SetValue</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MaterialOverrider</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">overrideAllMaterial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"> </span><span class="n">newMaterial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newMaterial</span><span class="p">});</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="n">op</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balloonModel</span><span class="p">.</span><span class="n">objectMaterialOverriders</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MaterialOverrider</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">overrideAllMaterial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"> </span><span class="n">newMaterial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newMaterial</span><span class="p">});</span>
+</code></pre></div>
 <h2 id="add-operation-and-send-transaction">Add operation and send transaction</h2>
-<pre><code class="language-cs">Transaction t = new transaction()
-{
-    reliable = true
-};
-t.AddIfNotNull(op);
-t.Dispatch();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Transaction</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">transaction</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">reliable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span>
+<span class="p">};</span>
+<span class="n">t</span><span class="p">.</span><span class="n">AddIfNotNull</span><span class="p">(</span><span class="n">op</span><span class="p">);</span>
+<span class="n">t</span><span class="p">.</span><span class="n">Dispatch</span><span class="p">();</span>
+</code></pre></div>
 
 
 
