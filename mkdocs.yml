@@ -2,16 +2,49 @@ site_name: UMI3D Documentation
 site_url: https://umi3d.fr/     #to change to the specific home url
 site_description: Documentation for the UMI3D SDK open-source project for cross device web XR experiences development
 
-repo_url: https://github.com/UMI3D/UMI3D-SDK-Documentation
+repo_url: https://github.com/UMI3D/UMI3D-SDK
 
 copyright: Copyright 2018-2023 UMI3D Consortium
 
 nav:
-  - Documentation:
-    - "Getting Started": pages/tutorials/home.md
-    - "How-to guides": pages/how-to/home.md
-    - "API Reference": pages/api-reference/home.md
-    - "Explanations": pages/explanation/home.md
+  - "Getting Started": pages/tutorials/home.md
+  - "How-to guides": pages/how-to/home.md
+  - "API Reference": pages/api-reference/home.md
+  - "Explanations": pages/explanation/home.md
   - Consortium: https://umi3d-consortium.org/
   - About:
     - License: pages/about/license.md
+
+theme:
+  name: material
+  language: en
+  favicon: img/favicon.ico
+  logo: img/umi3d-logo.png
+
+
+  palette:
+
+      # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      primary: cyan
+      accent: light blue
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+      # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: cyan
+      accent: light blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+      # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      accent: light blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
