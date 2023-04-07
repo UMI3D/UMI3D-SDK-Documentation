@@ -21,7 +21,6 @@ theme:
   favicon: img/favicon.ico
   logo: img/UMI3D-logo.png
 
-
   palette:
 
       # Palette toggle for automatic mode
@@ -48,3 +47,8 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences

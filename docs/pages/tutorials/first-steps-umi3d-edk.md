@@ -1,10 +1,12 @@
 # Tutorial: First steps with the UMI3D Environment Development Kit
 
 This tutorial aims to help Unity developers to start creating Collaborative Virtual Environments with the UMI3D SDK. The created Collaborative Virtual Environment is a basic world only containing avatars for the users and one interaction.
-For a more advanced sample, have a look on UMI3D Samples project: https://github.com/UMI3D/UMI3D-Samples 
+For a more advanced sample, have a look on the [UMI3D Samples project](https://github.com/UMI3D/UMI3D-Samples).
 
- !!! note
-    Stop
+
+!!! warning "Important"
+
+    This tutorial is old and need to be updated.
 
 ## Requirements
 
