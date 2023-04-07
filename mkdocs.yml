@@ -1,0 +1,17 @@
+site_name: UMI3D Documentation
+site_url: https://umi3d.fr/     #to change to the specific home url
+site_description: Documentation for the UMI3D SDK open-source project for cross device web XR experiences development
+
+repo_url: https://github.com/UMI3D/UMI3D-SDK-Documentation
+
+copyright: Copyright 2018-2023 UMI3D Consortium
+
+nav:
+  - Documentation:
+    - "Getting Started": pages/tutorials/home.md
+    - "How-to guides": pages/how-to/home.md
+    - "API Reference": pages/api-reference/home.md
+    - "Explanations": pages/explanation/home.md
+  - Consortium: https://umi3d-consortium.org/
+  - About:
+    - License: pages/about/license.md
