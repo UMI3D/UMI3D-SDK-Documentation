@@ -2,7 +2,7 @@
 
 ## glTF base
 
-The environment description used in UMI3D relies on the glTF open standard for three-dimmensional scenes and models desscription, from the Khronos Group. The glTF standard represent an environment as a tree of nodes, that may possess differents properties (better known as components). The glTF standard admits extensions to properties, to extend their abilities. A such, each UMI3D component is an extension of a glTF property.
+The environment description used in UMI3D relies on the [glTF open standard](https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html) for three-dimmensional scenes and models desscription, from the Khronos Group. The glTF standard represent an environment as a tree of nodes, that may possess differents properties (better known as components). The glTF standard admits extensions to properties, to extend their abilities. A such, each UMI3D component is an extension of a glTF property.
 
 ## Environment
 
