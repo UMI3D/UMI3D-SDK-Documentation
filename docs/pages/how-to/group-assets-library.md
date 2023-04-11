@@ -1,8 +1,10 @@
-# How-to: Group assets in an asset library
+# Group assets in an asset library
 
 Using assets libraries makes it possible to store the required asset for an environment on the client side. So, it does help a lot with speeding up the loading the same environment several times.
 
-## Create a new asset library as a ScriptableObject.
+## Define the library
+
+Create a new asset library as a ScriptableObject
 
 ![image.png](/img/group-assets-library-so.png)
 
@@ -18,6 +20,6 @@ Using assets libraries makes it possible to store the required asset for an envi
 6. Enter the number of files in your library (Optionnal)
 7. Enter the list of the format contained in the library
 
-## Configure environment to use the library
+## Add the library to the environment
 
 Then add the `AssetLibrary` to UMI3D Ressources objects that belongs to the library in the specified LibraryKey field that possess.

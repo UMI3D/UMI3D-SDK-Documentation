@@ -1,11 +1,15 @@
-# How-to: Change an asset properties
+# Change an asset properties at runtime
 
 Here is a short guide on how to change an asset properties. For example, we will move a 3D asset with a smooth movement using interpolation.
 
 ## Send the proper UMI3D operation
 
-1. Add a script referencing the object to move
+### 1. Create the script referencing the object
+
+Add a script referencing the object to move
+
 ![image.png](/img/move-asset-runtime-add-script-component.png)
+
 ```cs
 using umi3d.edk;
 using UnityEngine;
@@ -21,13 +25,19 @@ public class MoveBallon : MonoBehaviour
 }
 ```
 
-2. Create a `SetValue` operation
+### 2. Define the Operation
+
+Create a `SetValue` operation to move the object.
+
 ```cs
 Vector3 newPosition = balloonModel.objectPosition.GetValue() + new Vector3(1, 0, 0);
 SetEntityProperty operation = balloonModel.objectPosition.SetValue(newPosition);
 ```
 
-3. Create a `Transaction`
+### 3. Create the Transaction
+
+Create a `Transaction`.
+
 ```cs
 Transaction t = new Transaction()
 {
@@ -37,12 +47,15 @@ Transaction t = new Transaction()
 t.AddIfNotNull(operation);
 ```
 
-4. Dispatch the transaction
+### 4. Dispatch the transaction
+
+Dispatch the transaction.
+
 ```cs
 t.Dispatch();
 ```
 
-##Activate interpolation on the property
+## Activate interpolation on the property
 
 ```cs
 StartInterpolationProperty operation = new StartInterpolationProperty()

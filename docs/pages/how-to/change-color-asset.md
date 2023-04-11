@@ -1,6 +1,8 @@
-#How-to : Override the color of an asset
+# Override the color of an asset
 
-##Create a MaterialSO
+## Define a new Material
+
+Create a Material Scriptable Object.
 
 ![image.png](/img/change-color-add-so.png)
 
@@ -8,7 +10,9 @@ Such as a _Umi3D_External_Material_ or a _Umi3D_PBR_Material_.
 
 ![image.png](/img/change-color-pbr.png)
 
-##Create a script referencing the object and the material
+## Change color by script
+
+Create a script referencing the object and the material.
 
 ![image.png](/img/change-color-reference.png)
 
@@ -30,7 +34,10 @@ public class ChangeBalloonColor : MonoBehaviour
 }
 ```
 
-##Override the material
+## Override the material
+
+Override the material by setting a new Material overrider to the object.
+
 ```cs
 Operation op;
 if (model.objectMaterialOverriders.GetValue().Count > 0)
@@ -39,7 +46,8 @@ else
     op = balloonModel.objectMaterialOverriders.Add(new MaterialOverrider() { overrideAllMaterial = true, newMaterial = newMaterial});
 ```
 
-##Add operation and send transaction
+## Perform transaction
+
 ```cs
 Transaction t = new transaction()
 {
