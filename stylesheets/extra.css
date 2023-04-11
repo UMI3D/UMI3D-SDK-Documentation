@@ -1,0 +1,13 @@
+[data-md-color-scheme="umi3d"] 
+{
+    --md-primary-fg-color:        #00bdd6;
+    --md-primary-fg-color--light: #00bdd6;
+    --md-primary-fg-color--dark:  #0093a6;
+}
+
+:umi3d
+{
+    --md-primary-fg-color:        #00bdd6;
+    --md-primary-fg-color--light: #00bdd6;
+    --md-primary-fg-color--dark:  #0093a6;
+}
