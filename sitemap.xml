@@ -2,67 +2,77 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://umi3d.fr/</loc>
-         <lastmod>2023-04-07</lastmod>
+         <lastmod>2023-04-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://umi3d.fr/pages/about/license/</loc>
-         <lastmod>2023-04-07</lastmod>
+         <lastmod>2023-04-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://umi3d.fr/pages/api-reference/home/</loc>
-         <lastmod>2023-04-07</lastmod>
+         <loc>https://umi3d.fr/pages/api-reference/</loc>
+         <lastmod>2023-04-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://umi3d.fr/pages/explanation/home/</loc>
-         <lastmod>2023-04-07</lastmod>
+         <loc>https://umi3d.fr/pages/api-reference/environment-description/</loc>
+         <lastmod>2023-04-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://umi3d.fr/pages/api-reference/environment-synchronization/</loc>
+         <lastmod>2023-04-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://umi3d.fr/pages/explanation/</loc>
+         <lastmod>2023-04-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://umi3d.fr/pages/how-to/</loc>
+         <lastmod>2023-04-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://umi3d.fr/pages/how-to/add-a-3d-model/</loc>
-         <lastmod>2023-04-07</lastmod>
+         <lastmod>2023-04-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://umi3d.fr/pages/how-to/change-color-asset/</loc>
-         <lastmod>2023-04-07</lastmod>
+         <lastmod>2023-04-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://umi3d.fr/pages/how-to/create-asset-bundles/</loc>
-         <lastmod>2023-04-07</lastmod>
+         <lastmod>2023-04-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://umi3d.fr/pages/how-to/group-assets-library/</loc>
-         <lastmod>2023-04-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://umi3d.fr/pages/how-to/home/</loc>
-         <lastmod>2023-04-07</lastmod>
+         <lastmod>2023-04-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://umi3d.fr/pages/how-to/install-sdk/</loc>
-         <lastmod>2023-04-07</lastmod>
+         <lastmod>2023-04-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://umi3d.fr/pages/how-to/move-an-asset-at-runtime/</loc>
-         <lastmod>2023-04-07</lastmod>
+         <lastmod>2023-04-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://umi3d.fr/pages/tutorials/</loc>
+         <lastmod>2023-04-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://umi3d.fr/pages/tutorials/first-steps-umi3d-edk/</loc>
-         <lastmod>2023-04-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://umi3d.fr/pages/tutorials/home/</loc>
-         <lastmod>2023-04-07</lastmod>
+         <lastmod>2023-04-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

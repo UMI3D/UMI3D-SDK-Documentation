@@ -13,13 +13,17 @@
         <link rel="canonical" href="https://umi3d.fr/pages/how-to/move-an-asset-at-runtime/">
       
       
+        <link rel="prev" href="../add-a-3d-model/">
+      
+      
+        <link rel="next" href="../change-color-asset/">
       
       <link rel="icon" href="../../../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.5">
     
     
       
-        <title>How-to: Change an asset properties - UMI3D Documentation</title>
+        <title>Change an asset properties at runtime - UMI3D Documentation</title>
       
     
     
@@ -71,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-change-an-asset-properties" class="md-skip">
+        <a href="#change-an-asset-properties-at-runtime" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              How-to: Change an asset properties
+              Change an asset properties at runtime
             
           </span>
         </div>
@@ -241,10 +245,289 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../tutorials/">Getting Started</a>
+          
+            <label for="__nav_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../tutorials/home/" class="md-nav__link">
-        Getting Started
+      <a href="../../tutorials/first-steps-umi3d-edk/" class="md-nav__link">
+        First steps with the UMI3D Environment Development Kit
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">How-to guides</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          How-to guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install-sdk/" class="md-nav__link">
+        Install the UMI3D SDK
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add-a-3d-model/" class="md-nav__link">
+        Add a 3D model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Change an asset properties at runtime
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Change an asset properties at runtime
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#send-the-proper-umi3d-operation" class="md-nav__link">
+    Send the proper UMI3D operation
+  </a>
+  
+    <nav class="md-nav" aria-label="Send the proper UMI3D operation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-create-a-script-to" class="md-nav__link">
+    1. Create a script to
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-define-the-operation" class="md-nav__link">
+    2. Define the Operation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-create-the-transaction" class="md-nav__link">
+    3. Create the Transaction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-dispatch-the-transaction" class="md-nav__link">
+    4. Dispatch the transaction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activate-interpolation-on-the-property" class="md-nav__link">
+    Activate interpolation on the property
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../change-color-asset/" class="md-nav__link">
+        Override the color of an asset
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create-asset-bundles/" class="md-nav__link">
+        Create asset bundles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../group-assets-library/" class="md-nav__link">
+        Group assets in an asset library
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -256,10 +539,76 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../api-reference/">API Reference</a>
+          
+            <label for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          API Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../home/" class="md-nav__link">
-        How-to guides
+      <a href="../../api-reference/environment-description/" class="md-nav__link">
+        Environment description
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api-reference/environment-synchronization/" class="md-nav__link">
+        Environment synchronization
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -271,25 +620,40 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../api-reference/home/" class="md-nav__link">
-        API Reference
-      </a>
-    </li>
-  
-
     
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../explanation/home/" class="md-nav__link">
-        Explanations
-      </a>
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../explanation/">Explanations</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Explanations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -324,6 +688,10 @@
       
       <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
       
+      
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -389,6 +757,40 @@
     Send the proper UMI3D operation
   </a>
   
+    <nav class="md-nav" aria-label="Send the proper UMI3D operation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-create-a-script-to" class="md-nav__link">
+    1. Create a script to
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-define-the-operation" class="md-nav__link">
+    2. Define the Operation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-create-the-transaction" class="md-nav__link">
+    3. Create the Transaction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-dispatch-the-transaction" class="md-nav__link">
+    4. Dispatch the transaction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -416,13 +818,12 @@
   
 
 
-<h1 id="how-to-change-an-asset-properties">How-to: Change an asset properties</h1>
+<h1 id="change-an-asset-properties-at-runtime">Change an asset properties at runtime</h1>
 <p>Here is a short guide on how to change an asset properties. For example, we will move a 3D asset with a smooth movement using interpolation.</p>
 <h2 id="send-the-proper-umi3d-operation">Send the proper UMI3D operation</h2>
-<ol>
-<li>
-<p>Add a script referencing the object to move
-<img alt="image.png" src="/img/move-asset-runtime-add-script-component.png" />
+<h3 id="1-create-a-script-to">1. Create a script to</h3>
+<p>Add a script referencing the object to move</p>
+<p><img alt="image.png" src="/img/move-asset-runtime-add-script-component.png" /></p>
 <div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">umi3d.edk</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
 
@@ -435,30 +836,25 @@
 <span class="w">        </span><span class="n">balloonModel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">UMI3DNode</span><span class="o">&gt;</span><span class="p">();</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>Create a <code>SetValue</code> operation
+</code></pre></div>
+<h3 id="2-define-the-operation">2. Define the Operation</h3>
+<p>Create a <code>SetValue</code> operation to move the object.</p>
 <div class="highlight"><pre><span></span><code><span class="n">Vector3</span><span class="w"> </span><span class="n">newPosition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balloonModel</span><span class="p">.</span><span class="n">objectPosition</span><span class="p">.</span><span class="n">GetValue</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Vector3</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">);</span>
 <span class="n">SetEntityProperty</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balloonModel</span><span class="p">.</span><span class="n">objectPosition</span><span class="p">.</span><span class="n">SetValue</span><span class="p">(</span><span class="n">newPosition</span><span class="p">);</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>Create a <code>Transaction</code>
+</code></pre></div>
+<h3 id="3-create-the-transaction">3. Create the Transaction</h3>
+<p>Create a <code>Transaction</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="n">Transaction</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Transaction</span><span class="p">()</span>
 <span class="p">{</span>
 <span class="w">   </span><span class="n">reliable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span>
 <span class="p">};</span>
 
 <span class="n">t</span><span class="p">.</span><span class="n">AddIfNotNull</span><span class="p">(</span><span class="n">operation</span><span class="p">);</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>Dispatch the transaction
+</code></pre></div>
+<h3 id="4-dispatch-the-transaction">4. Dispatch the transaction</h3>
+<p>Dispatch the transaction.</p>
 <div class="highlight"><pre><span></span><code><span class="n">t</span><span class="p">.</span><span class="n">Dispatch</span><span class="p">();</span>
-</code></pre></div></p>
-</li>
-</ol>
+</code></pre></div>
 <h2 id="activate-interpolation-on-the-property">Activate interpolation on the property</h2>
 <div class="highlight"><pre><span></span><code><span class="n">StartInterpolationProperty</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StartInterpolationProperty</span><span class="p">()</span>
 <span class="p">{</span>
@@ -518,7 +914,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.path", "navigation.instant", "navigation.indexes", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.407015b8.min.js"></script>
