@@ -7,6 +7,7 @@ repo_url: https://github.com/UMI3D/UMI3D-SDK
 copyright: Copyright 2018-2023 UMI3D Consortium
 
 nav:
+  - "Home" : index.md
   - "Getting Started":
     - pages/tutorials/index.md
     - pages/tutorials/first-steps-umi3d-edk.md
@@ -45,6 +46,7 @@ theme:
     - navigation.indexes
 
     - content.code.copy
+    - content.code.annotate 
 
   palette:
 
@@ -74,7 +76,15 @@ theme:
         name: Switch to light mode
 
 markdown_extensions:
+  - attr_list
+  - md_in_html
   - admonition
   - pymdownx.details
+  - pymdownx.highlight:
+      linenums: true
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
   - pymdownx.superfences
-  - pymdownx.highlight

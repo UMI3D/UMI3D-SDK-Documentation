@@ -1,4 +1,12 @@
-#What is UMI3D?
+# UMI3D SDK Documentation
+
+![image.png](./img/umi3d-logo-banner.png#only-light){: style="height:200px;"}
+![image.png](./img/umi3d-logo-banner-light.png#only-dark){: style="height:200px;"}
+
+[Download last SDK release](https://github.com/UMI3D/UMI3D-SDK/releases/){ .md-button .md-button--primary }
+[View on GitHub](https://github.com/UMI3D/UMI3D-SDK/){ .md-button }
+
+## What is UMI3D?
 
 UMI3D is a web protocol that enables the creation of 3D media in which users of any AR/VR device can collaborate in real time. The 3D media is created once and hosted on a server or on a local computer. Any XR device can display and interact with it remotely thanks to a dedicated UMI3D browser.
 
@@ -8,7 +16,7 @@ Creating experiences with UMI3D helps to reduce the number of experiences that s
 
 ![image.png](img/UMI3D-remote.png)
 
-#How does it work?
+## How does it work?
 
 UMI3D relies on an interaction-based device abstraction layer. It allows remote 3D media created with the [UMI3D SDK](/External/Reference/UMI3D-SDK) to describe its possible interactions with a finite and limited set of objects.
 
