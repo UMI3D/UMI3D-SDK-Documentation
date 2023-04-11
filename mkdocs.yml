@@ -33,6 +33,9 @@ nav:
     - Consortium: https://umi3d-consortium.org/
     - License: pages/about/license.md
 
+extra_css:
+  - stylesheets/extra.css
+
 theme:
   name: material
   language: en
@@ -60,6 +63,7 @@ theme:
 
     - media: "(dark)"
       scheme: slate
+      primary: indigo
       accent: light blue
       toggle:
         icon: material/brightness-4
@@ -77,6 +81,7 @@ theme:
       # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: indigo
       accent: light blue
       toggle:
         icon: material/brightness-4
