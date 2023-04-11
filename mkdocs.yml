@@ -7,11 +7,29 @@ repo_url: https://github.com/UMI3D/UMI3D-SDK
 copyright: Copyright 2018-2023 UMI3D Consortium
 
 nav:
-  - "Getting Started": pages/tutorials/home.md
-  - "How-to guides": pages/how-to/home.md
-  - "API Reference": pages/api-reference/home.md
-  - "Explanations": pages/explanation/home.md
+  - "Getting Started":
+    - pages/tutorials/index.md
+    - pages/tutorials/first-steps-umi3d-edk.md
+
+  - "How-to guides": 
+    - pages/how-to/index.md
+    - pages/how-to/install-sdk.md
+    - pages/how-to/add-a-3d-model.md
+    - pages/how-to/move-an-asset-at-runtime.md
+    - pages/how-to/change-color-asset.md
+    - pages/how-to/create-asset-bundles.md
+    - pages/how-to/group-assets-library.md
+
+  - "API Reference": 
+    - pages/api-reference/index.md
+    - pages/api-reference/environment-description.md
+    - pages/api-reference/environment-synchronization.md
+
+  - "Explanations": 
+    - pages/explanation/index.md
+
   - Consortium: https://umi3d-consortium.org/
+
   - About:
     - License: pages/about/license.md
 
@@ -20,6 +38,13 @@ theme:
   language: en
   favicon: img/favicon.ico
   logo: img/UMI3D-logo.png
+
+  features:
+    - navigation.path
+    - navigation.instant
+    - navigation.indexes
+
+    - content.code.copy
 
   palette:
 
@@ -52,3 +77,4 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.highlight
