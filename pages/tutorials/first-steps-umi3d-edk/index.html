@@ -1,967 +1,458 @@
 
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="Documentation for the UMI3D SDK open-source project for cross device web XR experiences development">
-      
-      
-      
-        <link rel="canonical" href="https://umi3d.fr/pages/tutorials/first-steps-umi3d-edk/">
-      
-      
-        <link rel="prev" href="../">
-      
-      
-        <link rel="next" href="../../how-to/">
-      
-      <link rel="icon" href="../../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.5">
-    
-    
-      
-        <title>First steps with the UMI3D Environment Development Kit - UMI3D Documentation</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.7a7fce14.min.css">
-      
-        
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
-      
-      
+<!DOCTYPE html>
 
-    
-    
-    
-      
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
-    
-    
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
-
-    
-    
-    
-  </head>
-  
-  
-    
-    
-      
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="light-blue">
-  
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#first-steps-with-the-umi3d-environment-development-kit" class="md-skip">
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Documentation for the UMI3D SDK open-source project for cross device web XR experiences development" name="description"/>
+<link href="https://umi3d.fr/pages/tutorials/first-steps-umi3d-edk/" rel="canonical"/>
+<link href="../" rel="prev"/>
+<link href="../../how-to/" rel="next"/>
+<link href="../../../img/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.5" name="generator"/>
+<title>First steps with the UMI3D Environment Development Kit - UMI3D Documentation</title>
+<link href="../../../assets/stylesheets/main.7a7fce14.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="light-blue" data-md-color-primary="cyan" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#first-steps-with-the-umi3d-environment-development-kit">
           Skip to content
         </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-    
-      
-
-  
-
+</div>
+<div data-md-component="announce">
+</div>
 <header class="md-header md-header--shadow" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="UMI3D Documentation" class="md-header__button md-logo" aria-label="UMI3D Documentation" data-md-component="logo">
-      
-  <img src="../../../img/UMI3D-logo.png" alt="logo">
-
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="UMI3D Documentation" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="UMI3D Documentation">
+<img alt="logo" src="../../../img/UMI3D-logo.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
             UMI3D Documentation
           </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
             
               First steps with the UMI3D Environment Development Kit
             
           </span>
-        </div>
-      </div>
-    </div>
-    
-      <form class="md-header__option" data-md-component="palette">
-        
-          
-          <input class="md-option" data-md-color-media="(light)" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
-          
-            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_4" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
-            </label>
-          
-        
-          
-          <input class="md-option" data-md-color-media="(dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
-          
-            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
-            </label>
-          
-        
-          
-          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_3">
-          
-            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
-            </label>
-          
-        
-          
-          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_4">
-          
-            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_3" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
-            </label>
-          
-        
-      </form>
-    
-    
-    
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
-    
-    
-      <div class="md-header__source">
-        <a href="https://github.com/UMI3D/UMI3D-SDK" title="Go to repository" class="md-source" data-md-component="source">
-  <div class="md-source__icon md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
-  </div>
-  <div class="md-source__repository">
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="light-blue" data-md-color-media="(light)" data-md-color-primary="cyan" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_4" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="light-blue" data-md-color-media="(dark)" data-md-color-primary="" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="light-blue" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="cyan" data-md-color-scheme="default" id="__palette_3" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="light-blue" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="" data-md-color-scheme="slate" id="__palette_4" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_3" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+</form>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/UMI3D/UMI3D-SDK" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
     GitHub
   </div>
 </a>
-      </div>
-    
-  </nav>
-  
+</div>
+</nav>
 </header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-          
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="UMI3D Documentation" class="md-nav__button md-logo" aria-label="UMI3D Documentation" data-md-component="logo">
-      
-  <img src="../../../img/UMI3D-logo.png" alt="logo">
-
-    </a>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="UMI3D Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="UMI3D Documentation">
+<img alt="logo" src="../../../img/UMI3D-logo.png"/>
+</a>
     UMI3D Documentation
   </label>
-  
-    <div class="md-nav__source">
-      <a href="https://github.com/UMI3D/UMI3D-SDK" title="Go to repository" class="md-source" data-md-component="source">
-  <div class="md-source__icon md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
-  </div>
-  <div class="md-source__repository">
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/UMI3D/UMI3D-SDK" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
     GitHub
   </div>
 </a>
-    </div>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
         Home
       </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
-      
-      
-        
-          
-            
-          
-        
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../">Getting Started</a>
-          
-            <label for="__nav_2">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-        <label class="md-nav__title" for="__nav_2">
-          <span class="md-nav__icon md-icon"></span>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../">Getting Started</a>
+<label for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
           Getting Started
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-          
-            
-              
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
           First steps with the UMI3D Environment Development Kit
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         First steps with the UMI3D Environment Development Kit
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#set-up-the-server" class="md-nav__link">
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#set-up-the-server">
     Set up the server
   </a>
-  
-    <nav class="md-nav" aria-label="Set up the server">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#add-a-server" class="md-nav__link">
+<nav aria-label="Set up the server" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#add-a-server">
     Add a server
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#configure-the-server" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configure-the-server">
     Configure the server
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#configure-identification" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configure-identification">
     Configure identification
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#add-a-launcher" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#add-a-launcher">
     Add a launcher
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#define-an-environment" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#define-an-environment">
     Define an environment
   </a>
-  
-    <nav class="md-nav" aria-label="Define an environment">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#create-an-environment" class="md-nav__link">
+<nav aria-label="Define an environment" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#create-an-environment">
     Create an environment
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#create-a-scene" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#create-a-scene">
     Create a scene
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#set-up-avatars" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#set-up-avatars">
     Set up avatars
   </a>
-  
-    <nav class="md-nav" aria-label="Set up avatars">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#add-a-custom-avatar" class="md-nav__link">
+<nav aria-label="Set up avatars" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#add-a-custom-avatar">
     Add a custom avatar
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#configure-user-body-tracking" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configure-user-body-tracking">
     Configure user body tracking
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#support-audio" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#support-audio">
     Support audio
   </a>
-  
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#populate-the-scene-with-a-3d-asset" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#populate-the-scene-with-a-3d-asset">
     Populate the scene with a 3D asset
   </a>
-  
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#enrich-the-experience-with-interactions" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#enrich-the-experience-with-interactions">
     Enrich the experience with interactions
   </a>
-  
 </li>
-      
-    </ul>
-  
+</ul>
 </nav>
-      
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-      
-      
-        
-          
-            
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../how-to/">How-to guides</a>
-          
-            <label for="__nav_3">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../how-to/">How-to guides</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
           How-to guides
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../how-to/install-sdk/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../how-to/install-sdk/">
         Install the UMI3D SDK
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../how-to/add-a-3d-model/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../how-to/add-a-3d-model/">
         Add a 3D model
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../how-to/move-an-asset-at-runtime/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../how-to/move-an-asset-at-runtime/">
         Change an asset properties at runtime
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../how-to/change-color-asset/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../how-to/change-color-asset/">
         Override the color of an asset
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../how-to/group-assets-library/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../how-to/group-assets-library/">
         Group assets in an asset library
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-      
-      
-        
-          
-            
-          
-        
-          
-        
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../api-reference/">API Reference</a>
-          
-            <label for="__nav_4">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_4">
-          <span class="md-nav__icon md-icon"></span>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../api-reference/">API Reference</a>
+<label for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
           API Reference
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../api-reference/environment-description/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../api-reference/environment-description/">
         Environment description
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../api-reference/environment-synchronization/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../api-reference/environment-synchronization/">
         Environment synchronization
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-      
-      
-        
-          
-            
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../explanation/">Explanations</a>
-          
-        </div>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_5">
-          <span class="md-nav__icon md-icon"></span>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../explanation/">Explanations</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
           Explanations
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
-      
-      
-        
-          
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
           About
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_6">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
           About
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="https://umi3d-consortium.org/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://umi3d-consortium.org/">
         Consortium
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../about/license/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../about/license/">
         License
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-  </ul>
+</li>
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#set-up-the-server" class="md-nav__link">
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#set-up-the-server">
     Set up the server
   </a>
-  
-    <nav class="md-nav" aria-label="Set up the server">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#add-a-server" class="md-nav__link">
+<nav aria-label="Set up the server" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#add-a-server">
     Add a server
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#configure-the-server" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configure-the-server">
     Configure the server
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#configure-identification" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configure-identification">
     Configure identification
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#add-a-launcher" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#add-a-launcher">
     Add a launcher
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#define-an-environment" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#define-an-environment">
     Define an environment
   </a>
-  
-    <nav class="md-nav" aria-label="Define an environment">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#create-an-environment" class="md-nav__link">
+<nav aria-label="Define an environment" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#create-an-environment">
     Create an environment
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#create-a-scene" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#create-a-scene">
     Create a scene
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#set-up-avatars" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#set-up-avatars">
     Set up avatars
   </a>
-  
-    <nav class="md-nav" aria-label="Set up avatars">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#add-a-custom-avatar" class="md-nav__link">
+<nav aria-label="Set up avatars" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#add-a-custom-avatar">
     Add a custom avatar
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#configure-user-body-tracking" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configure-user-body-tracking">
     Configure user body tracking
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#support-audio" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#support-audio">
     Support audio
   </a>
-  
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#populate-the-scene-with-a-3d-asset" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#populate-the-scene-with-a-3d-asset">
     Populate the scene with a 3D asset
   </a>
-  
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#enrich-the-experience-with-interactions" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#enrich-the-experience-with-interactions">
     Enrich the experience with interactions
   </a>
-  
 </li>
-      
-    </ul>
-  
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          
-            <div class="md-content" data-md-component="content">
-              <article class="md-content__inner md-typeset">
-                
-                  
-
-  
-  
-
-
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
 <h1 id="first-steps-with-the-umi3d-environment-development-kit">First steps with the UMI3D Environment Development Kit</h1>
 <p>This tutorial aims to help Unity developers to start creating Collaborative Virtual Environments with the UMI3D SDK. The created Collaborative Virtual Environment is a basic world only containing avatars for the users and one interaction.
 For a more advanced sample, have a look on the <a href="https://github.com/UMI3D/UMI3D-Samples">UMI3D Samples project</a>.</p>
@@ -980,14 +471,14 @@ For a more advanced sample, have a look on the <a href="https://github.com/UMI3D
 <h2 id="set-up-the-server">Set up the server</h2>
 <h3 id="add-a-server">Add a server</h3>
 <p>Create an empty <code>GameObject</code> and eventually rename it “UMI3DServer”</p>
-<p><img alt="image.png" src="../img/first-steps-server-gameobject.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-server-gameobject.png"><img alt="image.png" src="../img/first-steps-server-gameobject.png"/></a></p>
 <p>Add a <code>UMI3DMainThreadDispatcher</code> component to the GameObject</p>
-<p><img alt="image.png" src="../img/first-steps-server-dispatcher.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-server-dispatcher.png"><img alt="image.png" src="../img/first-steps-server-dispatcher.png"/></a></p>
 <p>Add a <code>UMI3DCollaborationServer</code> component to the GameObject</p>
-<p><img alt="image.png" src="../img/first-steps-server-component.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-server-component.png"><img alt="image.png" src="../img/first-steps-server-component.png"/></a></p>
 <h3 id="configure-the-server">Configure the server</h3>
 <p>Fill the HttpPort field (e.g. 50203) of the <code>UMI3DCollaborationServer</code> component</p>
-<p><img alt="image.png" src="../img/first-steps-server-port.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-server-port.png"><img alt="image.png" src="../img/first-steps-server-port.png"/></a></p>
 <h3 id="configure-identification">Configure identification</h3>
 <p>Create an Identifier script and paste the code below inside.</p>
 <div class="language-cs highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
@@ -1014,10 +505,10 @@ For a more advanced sample, have a look on the <a href="https://github.com/UMI3D
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="k">using</span><span class="w"> </span><span class="nn">umi3d.edk.collaboration</span><span class="p">;</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="na">[CreateAssetMenu(fileName = &quot;identifier&quot;, menuName = &quot;UMI3D/Identifier&quot;)]</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="na">[CreateAssetMenu(fileName = "identifier", menuName = "UMI3D/Identifier")]</span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">identifier</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IdentifierApi</span>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="p">{</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">pin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0000&quot;</span><span class="p">;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">pin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"0000"</span><span class="p">;</span>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a>
 </span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">    </span><span class="c1">///&lt;inheritdoc/&gt;</span>
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">UMI3DAuthenticator</span><span class="w"> </span><span class="nf">GetAuthenticator</span><span class="p">(</span><span class="k">ref</span><span class="w"> </span><span class="n">AuthenticationType</span><span class="w"> </span><span class="n">type</span><span class="p">)</span>
@@ -1027,48 +518,48 @@ For a more advanced sample, have a look on the <a href="https://github.com/UMI3D
 </span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Create an <code>Identifier</code> asset in the Script folder</p>
-<p><img alt="image.png" src="../img/first-steps-server-identifier.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-server-identifier.png"><img alt="image.png" src="../img/first-steps-server-identifier.png"/></a></p>
 <p>Assign the created Identifier to the Identifier field of the UMI3DCollaborationServer component</p>
-<p><img alt="image.png" src="../img/first-steps-server-identifier-assign.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-server-identifier-assign.png"><img alt="image.png" src="../img/first-steps-server-identifier-assign.png"/></a></p>
 <h3 id="add-a-launcher">Add a launcher</h3>
 <p>Create an empty <code>GameObject</code> and eventually rename it “UMI3DLauncher”</p>
-<p><img alt="image.png" src="../img/first-steps-launcher-gameobject.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-launcher-gameobject.png"><img alt="image.png" src="../img/first-steps-launcher-gameobject.png"/></a></p>
 <p>Add a <code>UMI3DLauncher</code> component to the GameObject</p>
-<p><img alt="image.png" src="../img/first-steps-launcher-componenent.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-launcher-componenent.png"><img alt="image.png" src="../img/first-steps-launcher-componenent.png"/></a></p>
 <p>Tick the Launch Server On Start option</p>
-<p><img alt="image.png" src="../img/first-steps-launcher-tick-start.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-launcher-tick-start.png"><img alt="image.png" src="../img/first-steps-launcher-tick-start.png"/></a></p>
 <h2 id="define-an-environment">Define an environment</h2>
 <h3 id="create-an-environment">Create an environment</h3>
 <p>Create an empty <code>GameObject</code> and eventually rename it “UMI3DEnv”.</p>
-<p><img alt="image.png" src="../img/first-steps-environment-gameobject.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-environment-gameobject.png"><img alt="image.png" src="../img/first-steps-environment-gameobject.png"/></a></p>
 <p>Add a <code>UMI3DCollaborationEnvironment</code> component to the GameObject</p>
-<p><img alt="image.png" src="../img/first-steps-environment-component.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-environment-component.png"><img alt="image.png" src="../img/first-steps-environment-component.png"/></a></p>
 <p>Fill the Environment Name field as wanted (testGPR in the screenshot)</p>
-<p><img alt="image.png" src="../img/first-steps-environment-name.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-environment-name.png"><img alt="image.png" src="../img/first-steps-environment-name.png"/></a></p>
 <h3 id="create-a-scene">Create a scene</h3>
 <p>Create an empty <code>GameObject</code> under the UMI3DEnv <code>GameObject</code> and eventually rename it “Scene”</p>
-<p><img alt="image.png" src="../img/first-steps-environment-scene.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-environment-scene.png"><img alt="image.png" src="../img/first-steps-environment-scene.png"/></a></p>
 <p>Add a <code>UMI3DScene</code> component to this new <code>GameObject</code></p>
-<p><img alt="image.png" src="../img/first-steps-environment-scene-component.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-environment-scene-component.png"><img alt="image.png" src="../img/first-steps-environment-scene-component.png"/></a></p>
 <p>Create an empty <code>GameObject</code> under the UMI3DEnv GameObject and eventually rename it “SceneEmbo ”</p>
-<p><img alt="image.png" src="../img/first-steps-environment-scene-embodiment.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-environment-scene-embodiment.png"><img alt="image.png" src="../img/first-steps-environment-scene-embodiment.png"/></a></p>
 <p>Add a <code>UMI3DScene</code> component to this new <code>GameObject</code></p>
-<p><img alt="image.png" src="../img/first-steps-environment-scene-embodiment-componenent.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-environment-scene-embodiment-componenent.png"><img alt="image.png" src="../img/first-steps-environment-scene-embodiment-componenent.png"/></a></p>
 <h2 id="set-up-avatars">Set up avatars</h2>
 <h3 id="add-a-custom-avatar">Add a custom avatar</h3>
 <p>Create a empty <code>GameObject</code> and eventually rename it “Perso”</p>
-<p><img alt="image.png" src="../img/first-steps-perso.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-perso.png"><img alt="image.png" src="../img/first-steps-perso.png"/></a></p>
 <p>Add a <code>UMI3DModel</code> component to the GameObject</p>
-<p><img alt="image.png" src="../img/first-steps-model.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-model.png"><img alt="image.png" src="../img/first-steps-model.png"/></a></p>
 <p>Set the size of Variants to 1, select Unity_standalone and add the path where the AssetBundle is. In order to have a visual representation of the avatar on the environment, I added the “LoadBundle” component.</p>
 <p>Create a prefab of the whole asset in the Prefab folder and remove it from the scene.</p>
 <h3 id="configure-user-body-tracking">Configure user body tracking</h3>
 <p>Create an empty <code>GameObject</code> and eventually rename it “UMI3DEmboManager”</p>
-<p><img alt="image.png" src="../img/first-steps-embodiment-manager.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-embodiment-manager.png"><img alt="image.png" src="../img/first-steps-embodiment-manager.png"/></a></p>
 <p>Add a <code>UMI3DEmbodimentManager</code> component to this new <code>GameObject</code></p>
-<p><img alt="image.png" src="../img/first-steps-embodiment-manager-component.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-embodiment-manager-component.png"><img alt="image.png" src="../img/first-steps-embodiment-manager-component.png"/></a></p>
 <p>Assign the <code>UMI3DScene</code> of the <code>GameObject</code> "SceneEmbo“ to the Embodiments Scene field of the <code>UMI3DEmbodimentManager</code> component</p>
-<p><img alt="image.png" src="../img/first-steps-embodiment-scene-assign.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-embodiment-scene-assign.png"><img alt="image.png" src="../img/first-steps-embodiment-scene-assign.png"/></a></p>
 <p>Create an AvatarManager script and paste the code below inside.</p>
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
 <span class="normal">  2</span>
@@ -1230,7 +721,7 @@ public class AvatarManager : MonoBehaviour
 
         String id = UserEmbodimentBone.userId;
         UMI3DAvatarNode avnode = UMI3DEmbodimentManager.Instance.embodimentInstances[id];
-        GameObject go = new GameObject(&quot;Bone:&quot; + UserEmbodimentBone.boneType);
+        GameObject go = new GameObject("Bone:" + UserEmbodimentBone.boneType);
         go.transform.parent = avnode.transform;
         go.transform.localPosition = UserEmbodimentBone.spatialPosition.localPosition;
         go.transform.localRotation = UserEmbodimentBone.spatialPosition.localRotation;
@@ -1275,78 +766,58 @@ public class AvatarManager : MonoBehaviour
 ```
 </code></pre></div></td></tr></table></div>
 <p>Add a <code>AvatarManager</code> component (with the created script) to the “UMI3DEmboManager” <code>GameObject</code></p>
-<p><img alt="image.png" src="../img/first-steps-embodiment-avatar-manager.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-embodiment-avatar-manager.png"><img alt="image.png" src="../img/first-steps-embodiment-avatar-manager.png"/></a></p>
 <p>Add the « X » prefab in the modelPrefab field of the AvatarManager component</p>
-<p><img alt="image.png" src="../img/first-steps-embodiment-prefab.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-embodiment-prefab.png"><img alt="image.png" src="../img/first-steps-embodiment-prefab.png"/></a></p>
 <p>Set the size of List Bind List to 1, the size of B List to 1, choose “head” as a BoneType and set the name of the corresponding Bone in the model's structure (“Head” in our case)</p>
-<p><img alt="image.png" src="../img/first-steps-embodiment-bind.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-embodiment-bind.png"><img alt="image.png" src="../img/first-steps-embodiment-bind.png"/></a></p>
 <h2 id="support-audio">Support audio</h2>
 <p>Create an empty <code>GameObject</code> and eventually name it “UMI3DAudio”</p>
-<p><img alt="image.png" src="../img/first-steps-audio-gameobject.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-audio-gameobject.png"><img alt="image.png" src="../img/first-steps-audio-gameobject.png"/></a></p>
 <p>Add a <code>UMI3DAudioBridger</code> component to the <code>GameObject</code></p>
-<p><img alt="image.png" src="../img/first-steps-audio-bridger.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-audio-bridger.png"><img alt="image.png" src="../img/first-steps-audio-bridger.png"/></a></p>
 <h2 id="populate-the-scene-with-a-3d-asset">Populate the scene with a 3D asset</h2>
 <p>Create an empty <code>GameObject</code> and eventually name it “obj1” under the “scene” <code>GameObject</code></p>
-<p><img alt="image.png" src="../img/first-steps-model-gameobject.png" />  </p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-model-gameobject.png"><img alt="image.png" src="../img/first-steps-model-gameobject.png"/></a> </p>
 <p>Add a <code>UMI3DModel</code> component to this new <code>GameObject</code></p>
-<p><img alt="image.png" src="../img/first-steps-model-component.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-model-component.png"><img alt="image.png" src="../img/first-steps-model-component.png"/></a></p>
 <p>Select the path of the object, its format and its extension in the corresponding fields</p>
-<p><img alt="image.png" src="../img/first-steps-model-path.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-model-path.png"><img alt="image.png" src="../img/first-steps-model-path.png"/></a></p>
 <h2 id="enrich-the-experience-with-interactions">Enrich the experience with interactions</h2>
 <p>Add a <code>UMI3DEvent</code> component to the “obj1” GameObject</p>
-<p><img alt="image.png" src="../img/first-steps-model-event.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-model-event.png"><img alt="image.png" src="../img/first-steps-model-event.png"/></a></p>
 <p>Add a <code>StringParameter</code> component to the “obj1” GameObject</p>
-<p><img alt="image.png" src="../img/first-steps-model-event-string.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-model-event-string.png"><img alt="image.png" src="../img/first-steps-model-event-string.png"/></a></p>
 <p>Add a <code>UMI3DInteractable</code> component to the “obj1” GameObject</p>
-<p><img alt="image.png" src="../img/first-steps-model-interactable.png" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-model-interactable.png"><img alt="image.png" src="../img/first-steps-model-interactable.png"/></a></p>
 <p>Add a <code>UMI3DManipulation</code> component to the “obj1” GameObject</p>
-<p><img alt="image.png" src="../img/first-steps-model-manipulation.png" /></p>
-
-
-
-
-
-                
-              </article>
-            </div>
-          
-          
-        </div>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-    <div class="md-copyright__highlight">
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/first-steps-model-manipulation.png"><img alt="image.png" src="../img/first-steps-model-manipulation.png"/></a></p>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
       Copyright 2018-2023 UMI3D Consortium
     </div>
   
   
     Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
       Material for MkDocs
     </a>
-  
 </div>
-      
-    </div>
-  </div>
+</div>
+</div>
 </footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.path", "navigation.instant", "navigation.indexes", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-    
-    
-      <script src="../../../assets/javascripts/bundle.407015b8.min.js"></script>
-      
-    
-  </body>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.path", "navigation.instant", "navigation.indexes", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../assets/javascripts/bundle.407015b8.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
