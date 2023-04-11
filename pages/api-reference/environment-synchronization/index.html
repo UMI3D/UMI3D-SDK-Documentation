@@ -807,14 +807,14 @@
 <h1 id="environment-synchronization">Environment synchronization</h1>
 <p>After a enviroment has been loaded on a browser, changes can happen to objects in the remotely hosted enviroment (e.g. a moving ball, or color change on a wall). It is necessary to maintain a coherence between the environment description on the server and the one on the browsers.</p>
 <h2 id="entities">Entities</h2>
-<p><img alt="image.png" src="/img/api-environment-synchronization-entities.png" /></p>
+<p><img alt="image.png" src="img/api-environment-synchronization-entities.png" /></p>
 <p>Any object that belongs to an environment and is concerned by the environment synchronization is a <code>UMI3DEntity</code>. This includes all objects on the scene graph but all entities are not necessarily a part of the scene description. A <code>UMI3DEntity</code> possesses a unique ID that s attributed by the server on runtime and one or several <code>EntityProperty</code>.</p>
 <h2 id="transactions">Transactions</h2>
-<p><img alt="image.png" src="/img/api-environment-synchronization-transactions.png" /></p>
+<p><img alt="image.png" src="img/api-environment-synchronization-transactions.png" /></p>
 <p>A <code>Transaction</code> is the wrapper around one ore several <code>Operations</code> and is the message sent from the server to the clients to inform the connected browsers of a change. A transaction could be either <em>reliable</em> or not. Reliable transactions are guarranted to be received by clients, at the cost of a longer message and processing, while unreliable transactions do not have this verification step, making them lighter and faster.</p>
 <h2 id="environment-synchronization_1">Environment Synchronization</h2>
 <h3 id="operations">Operations</h3>
-<p><img alt="image.png" src="/img/api-environment-synchronization-operation.png" /></p>
+<p><img alt="image.png" src="img/api-environment-synchronization-operation.png" /></p>
 <p>An <code>Operation</code> is a unit change to a UMI3D <code>Entity</code>. It could either be its loading and destroying, or ore often the setting of one of its asynchroneous <em>properties</em>. Each type of <code>EntityProperty</code> is identified in UMI3D through a unique ID. See the <a href="/External/Reference/UMI3D-SDK/Core/Networking">Networking section</a> for more information.</p>
 <p>Syntax for a new transaction:</p>
 <div class="highlight"><pre><span></span><code><span class="n">Operation</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SetEntityListProperty</span><span class="p">()</span>
@@ -829,7 +829,7 @@
 <span class="n">transaction</span><span class="p">.</span><span class="n">Dispatch</span><span class="p">();</span>
 </code></pre></div>
 <h3 id="asynchroneous-properties">Asynchroneous Properties</h3>
-<p><img alt="image.png" src="/img/api-environment-synchronization-async-properties.png" /></p>
+<p><img alt="image.png" src="img/api-environment-synchronization-async-properties.png" /></p>
 <p>Asynchroneous properties (<code>AsyncProperties</code>) are properties of UMI3D entities that are allowed to be set and to be different from one user to another, resulting in two different values in two different browsers.</p>
 <p>Their value is set through a <code>SetValue()</code> call on the AsyncProperty wrapper. It returns a <code>Transaction</code> ready to be dispatched.</p>
 
