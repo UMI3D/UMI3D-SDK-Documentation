@@ -7,11 +7,11 @@ For a more advanced sample, have a look on the [UMI3D Samples project](https://g
 
     This tutorial is old and need to be updated.
 
-!!! note "Requirements
+!!! note "Requirements"
 
-    UMI3D Version: 1.1.r.210402+
-    Compatible UMI3D Desktop Browser: 1.0.5.210402+
-    Compatible UMI3D OpenVR Browser: 1.0.5.210402+
+    - UMI3D Version: 1.1.r.210402+
+    - Compatible UMI3D Desktop Browser: 1.0.5.210402+
+    - Compatible UMI3D OpenVR Browser: 1.0.5.210402+
 
 ## Set up the server
 
