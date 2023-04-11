@@ -1,5 +1,7 @@
 # API Reference
 
+This section contains precise details on technical implementations. 
+
 ## Generated documentation
 
 Automatically generated documentation from code is available [here](https://umi3d.github.io/UMI3D-SDK/index.html).
