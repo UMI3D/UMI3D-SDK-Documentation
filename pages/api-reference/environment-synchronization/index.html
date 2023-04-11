@@ -245,13 +245,28 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
       
       
         
@@ -268,14 +283,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="../../tutorials/">Getting Started</a>
           
-            <label for="__nav_1">
+            <label for="__nav_2">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Getting Started
         </label>
@@ -316,7 +331,7 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
       
       
         
@@ -343,14 +358,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="../../how-to/">How-to guides</a>
           
-            <label for="__nav_2">
+            <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_2">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           How-to guides
         </label>
@@ -463,7 +478,7 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
       
       
         
@@ -482,14 +497,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="../">API Reference</a>
           
-            <label for="__nav_3">
+            <label for="__nav_4">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-        <label class="md-nav__title" for="__nav_3">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           API Reference
         </label>
@@ -619,7 +634,7 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
       
       
         
@@ -636,8 +651,8 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_4">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Explanations
         </label>
@@ -679,7 +694,7 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
       
       
         
@@ -687,13 +702,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
           About
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_6">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
           About
         </label>
@@ -807,29 +822,38 @@
 <h1 id="environment-synchronization">Environment synchronization</h1>
 <p>After a enviroment has been loaded on a browser, changes can happen to objects in the remotely hosted enviroment (e.g. a moving ball, or color change on a wall). It is necessary to maintain a coherence between the environment description on the server and the one on the browsers.</p>
 <h2 id="entities">Entities</h2>
-<p><img alt="image.png" src="img/api-environment-synchronization-entities.png" /></p>
+<p><img alt="image.png" src="../img/api-environment-synchronization-entities.png" /></p>
 <p>Any object that belongs to an environment and is concerned by the environment synchronization is a <code>UMI3DEntity</code>. This includes all objects on the scene graph but all entities are not necessarily a part of the scene description. A <code>UMI3DEntity</code> possesses a unique ID that s attributed by the server on runtime and one or several <code>EntityProperty</code>.</p>
 <h2 id="transactions">Transactions</h2>
-<p><img alt="image.png" src="img/api-environment-synchronization-transactions.png" /></p>
+<p><img alt="image.png" src="../img/api-environment-synchronization-transactions.png" /></p>
 <p>A <code>Transaction</code> is the wrapper around one ore several <code>Operations</code> and is the message sent from the server to the clients to inform the connected browsers of a change. A transaction could be either <em>reliable</em> or not. Reliable transactions are guarranted to be received by clients, at the cost of a longer message and processing, while unreliable transactions do not have this verification step, making them lighter and faster.</p>
 <h2 id="environment-synchronization_1">Environment Synchronization</h2>
 <h3 id="operations">Operations</h3>
-<p><img alt="image.png" src="img/api-environment-synchronization-operation.png" /></p>
+<p><img alt="image.png" src="../img/api-environment-synchronization-operation.png" /></p>
 <p>An <code>Operation</code> is a unit change to a UMI3D <code>Entity</code>. It could either be its loading and destroying, or ore often the setting of one of its asynchroneous <em>properties</em>. Each type of <code>EntityProperty</code> is identified in UMI3D through a unique ID. See the <a href="/External/Reference/UMI3D-SDK/Core/Networking">Networking section</a> for more information.</p>
 <p>Syntax for a new transaction:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Operation</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SetEntityListProperty</span><span class="p">()</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="n">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;</span><span class="n">UMI3DUser</span><span class="o">&gt;</span><span class="p">(</span><span class="n">UMI3DServer</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">Users</span><span class="p">()),</span>
-<span class="w">    </span><span class="n">entityId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">entityId</span><span class="p">,</span>
-<span class="w">    </span><span class="n">property</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">propertyId</span><span class="p">,</span>
-<span class="w">    </span><span class="k">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">aValue</span>
-<span class="p">};</span>
-<span class="n">Transaction</span><span class="w"> </span><span class="n">transaction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Transaction</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">reliable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
-<span class="n">transaction</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">operation</span><span class="w"> </span><span class="p">);</span>
-<span class="n">transaction</span><span class="p">.</span><span class="n">Dispatch</span><span class="p">();</span>
-</code></pre></div>
+<div class="language-cs highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">Operation</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SetEntityListProperty</span><span class="p">()</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="n">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;</span><span class="n">UMI3DUser</span><span class="o">&gt;</span><span class="p">(</span><span class="n">UMI3DServer</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">Users</span><span class="p">()),</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="n">entityId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">entityId</span><span class="p">,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="n">property</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">propertyId</span><span class="p">,</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="k">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">aValue</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="p">};</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="n">Transaction</span><span class="w"> </span><span class="n">transaction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Transaction</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">reliable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="n">transaction</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">operation</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="n">transaction</span><span class="p">.</span><span class="n">Dispatch</span><span class="p">();</span>
+</span></code></pre></div></td></tr></table></div>
 <h3 id="asynchroneous-properties">Asynchroneous Properties</h3>
-<p><img alt="image.png" src="img/api-environment-synchronization-async-properties.png" /></p>
+<p><img alt="image.png" src="../img/api-environment-synchronization-async-properties.png" /></p>
 <p>Asynchroneous properties (<code>AsyncProperties</code>) are properties of UMI3D entities that are allowed to be set and to be different from one user to another, resulting in two different values in two different browsers.</p>
 <p>Their value is set through a <code>SetValue()</code> call on the AsyncProperty wrapper. It returns a <code>Transaction</code> ready to be dispatched.</p>
 
@@ -873,7 +897,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.path", "navigation.instant", "navigation.indexes", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.path", "navigation.instant", "navigation.indexes", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.407015b8.min.js"></script>

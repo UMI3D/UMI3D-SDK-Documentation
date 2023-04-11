@@ -245,13 +245,28 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
       
       
         
@@ -268,14 +283,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="../../tutorials/">Getting Started</a>
           
-            <label for="__nav_1">
+            <label for="__nav_2">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Getting Started
         </label>
@@ -318,7 +333,7 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
       
       
         
@@ -345,14 +360,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="../">How-to guides</a>
           
-            <label for="__nav_2">
+            <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-        <label class="md-nav__title" for="__nav_2">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           How-to guides
         </label>
@@ -545,7 +560,7 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
       
       
         
@@ -564,14 +579,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="../../api-reference/">API Reference</a>
           
-            <label for="__nav_3">
+            <label for="__nav_4">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_3">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           API Reference
         </label>
@@ -626,7 +641,7 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
       
       
         
@@ -643,8 +658,8 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_4">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Explanations
         </label>
@@ -686,7 +701,7 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
       
       
         
@@ -694,13 +709,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
           About
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_6">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
           About
         </label>
@@ -823,56 +838,88 @@
 <h2 id="send-the-proper-umi3d-operation">Send the proper UMI3D operation</h2>
 <h3 id="1-create-the-script-referencing-the-object">1. Create the script referencing the object</h3>
 <p>Add a script referencing the object to move</p>
-<p><img alt="image.png" src="img/move-asset-runtime-add-script-component.png" /></p>
-<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">umi3d.edk</span><span class="p">;</span>
-<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
-
-<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MoveBallon</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">MonoBehaviour</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="n">UMI3DNode</span><span class="w"> </span><span class="n">balloonModel</span><span class="p">;</span>
-
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Start</span><span class="p">()</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="n">balloonModel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">UMI3DNode</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<p><img alt="image.png" src="../img/move-asset-runtime-add-script-component.png" /></p>
+<div class="language-cs highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">umi3d.edk</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MoveBallon</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">MonoBehaviour</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="p">{</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="n">UMI3DNode</span><span class="w"> </span><span class="n">balloonModel</span><span class="p">;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Start</span><span class="p">()</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">        </span><span class="n">balloonModel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">UMI3DNode</span><span class="o">&gt;</span><span class="p">();</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
 <h3 id="2-define-the-operation">2. Define the Operation</h3>
 <p>Create a <code>SetValue</code> operation to move the object.</p>
-<div class="highlight"><pre><span></span><code><span class="n">Vector3</span><span class="w"> </span><span class="n">newPosition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balloonModel</span><span class="p">.</span><span class="n">objectPosition</span><span class="p">.</span><span class="n">GetValue</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Vector3</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">);</span>
-<span class="n">SetEntityProperty</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balloonModel</span><span class="p">.</span><span class="n">objectPosition</span><span class="p">.</span><span class="n">SetValue</span><span class="p">(</span><span class="n">newPosition</span><span class="p">);</span>
-</code></pre></div>
+<div class="language-cs highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">Vector3</span><span class="w"> </span><span class="n">newPosition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balloonModel</span><span class="p">.</span><span class="n">objectPosition</span><span class="p">.</span><span class="n">GetValue</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Vector3</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">);</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">SetEntityProperty</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balloonModel</span><span class="p">.</span><span class="n">objectPosition</span><span class="p">.</span><span class="n">SetValue</span><span class="p">(</span><span class="n">newPosition</span><span class="p">);</span>
+</span></code></pre></div></td></tr></table></div>
 <h3 id="3-create-the-transaction">3. Create the Transaction</h3>
 <p>Create a <code>Transaction</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="n">Transaction</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Transaction</span><span class="p">()</span>
-<span class="p">{</span>
-<span class="w">   </span><span class="n">reliable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span>
-<span class="p">};</span>
-
-<span class="n">t</span><span class="p">.</span><span class="n">AddIfNotNull</span><span class="p">(</span><span class="n">operation</span><span class="p">);</span>
-</code></pre></div>
+<div class="language-cs highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">Transaction</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Transaction</span><span class="p">()</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">   </span><span class="n">reliable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="p">};</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="n">t</span><span class="p">.</span><span class="n">AddIfNotNull</span><span class="p">(</span><span class="n">operation</span><span class="p">);</span>
+</span></code></pre></div></td></tr></table></div>
 <h3 id="4-dispatch-the-transaction">4. Dispatch the transaction</h3>
 <p>Dispatch the transaction.</p>
-<div class="highlight"><pre><span></span><code><span class="n">t</span><span class="p">.</span><span class="n">Dispatch</span><span class="p">();</span>
-</code></pre></div>
+<div class="language-cs highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">t</span><span class="p">.</span><span class="n">Dispatch</span><span class="p">();</span>
+</span></code></pre></div></td></tr></table></div>
 <h2 id="activate-interpolation-on-the-property">Activate interpolation on the property</h2>
-<div class="highlight"><pre><span></span><code><span class="n">StartInterpolationProperty</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StartInterpolationProperty</span><span class="p">()</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="n">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;</span><span class="n">UMI3DUser</span><span class="o">&gt;</span><span class="p">(</span><span class="n">UMI3DCollaborationServer</span><span class="p">.</span><span class="n">Collaboration</span><span class="p">.</span><span class="n">Users</span><span class="p">),</span><span class="w"> </span><span class="c1">//send the interpolation to all referenced users</span>
-<span class="w">    </span><span class="n">property</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balloonModel</span><span class="p">.</span><span class="n">objectPosition</span><span class="p">.</span><span class="n">propertyId</span><span class="p">,</span><span class="w"> </span><span class="c1">// id of the property to activate interpolation on</span>
-<span class="w">    </span><span class="n">entityId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balloonModel</span><span class="p">.</span><span class="n">objectPosition</span><span class="p">.</span><span class="n">entityId</span><span class="p">,</span>
-<span class="w">    </span><span class="n">startValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balloonModel</span><span class="p">.</span><span class="n">objectPosition</span><span class="p">.</span><span class="n">GetValue</span><span class="p">()</span>
-<span class="p">};</span>
-
-<span class="n">Transaction</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Transaction</span><span class="p">()</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="n">reliable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span>
-<span class="p">};</span>
-
-<span class="n">t</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">operation</span><span class="p">);</span>
-
-<span class="n">t</span><span class="p">.</span><span class="n">Dispatch</span><span class="p">();</span>
-</code></pre></div>
+<div class="language-cs highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">StartInterpolationProperty</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StartInterpolationProperty</span><span class="p">()</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="p">{</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="n">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;</span><span class="n">UMI3DUser</span><span class="o">&gt;</span><span class="p">(</span><span class="n">UMI3DCollaborationServer</span><span class="p">.</span><span class="n">Collaboration</span><span class="p">.</span><span class="n">Users</span><span class="p">),</span><span class="w"> </span><span class="c1">//send the interpolation to all referenced users</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">    </span><span class="n">property</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balloonModel</span><span class="p">.</span><span class="n">objectPosition</span><span class="p">.</span><span class="n">propertyId</span><span class="p">,</span><span class="w"> </span><span class="c1">// id of the property to activate interpolation on</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">    </span><span class="n">entityId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balloonModel</span><span class="p">.</span><span class="n">objectPosition</span><span class="p">.</span><span class="n">entityId</span><span class="p">,</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">    </span><span class="n">startValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balloonModel</span><span class="p">.</span><span class="n">objectPosition</span><span class="p">.</span><span class="n">GetValue</span><span class="p">()</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="p">};</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="n">Transaction</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Transaction</span><span class="p">()</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="p">{</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">    </span><span class="n">reliable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="p">};</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13"></a>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="n">t</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">operation</span><span class="p">);</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15"></a>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="n">t</span><span class="p">.</span><span class="n">Dispatch</span><span class="p">();</span>
+</span></code></pre></div></td></tr></table></div>
 
 
 
@@ -914,7 +961,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.path", "navigation.instant", "navigation.indexes", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.path", "navigation.instant", "navigation.indexes", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.407015b8.min.js"></script>
