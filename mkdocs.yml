@@ -100,3 +100,8 @@ markdown_extensions:
       #already referenced in material plugin:
       emoji_index: !!python/name:materialx.emoji.twemoji 
       emoji_generator: !!python/name:materialx.emoji.to_svg
+
+plugins:
+  - glightbox:
+      skip_classes:
+         - no-lightbox
