@@ -8,7 +8,7 @@ Here is a short guide on how to change an asset properties. For example, we will
 
 Add a script referencing the object to move
 
-![image.png](/img/move-asset-runtime-add-script-component.png)
+![image.png](img/move-asset-runtime-add-script-component.png)
 
 ```cs
 using umi3d.edk;

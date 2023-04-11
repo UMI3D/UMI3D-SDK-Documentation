@@ -19,21 +19,21 @@ For a more advanced sample, have a look on the [UMI3D Samples project](https://g
 
 Create an empty `GameObject` and eventually rename it “UMI3DServer”
 
- ![image.png](/img/first-steps-server-gameobject.png)
+ ![image.png](img/first-steps-server-gameobject.png)
 
 Add a `UMI3DMainThreadDispatcher` component to the GameObject
 
- ![image.png](/img/first-steps-server-dispatcher.png)
+ ![image.png](img/first-steps-server-dispatcher.png)
 
 Add a `UMI3DCollaborationServer` component to the GameObject
 
- ![image.png](/img/first-steps-server-component.png)
+ ![image.png](img/first-steps-server-component.png)
 
 ### Configure the server
 
 Fill the HttpPort field (e.g. 50203) of the `UMI3DCollaborationServer` component
 
- ![image.png](/img/first-steps-server-port.png)
+ ![image.png](img/first-steps-server-port.png)
 
 ### Configure identification
 
@@ -64,25 +64,25 @@ Create an Identifier script and paste the code below inside.
 
 Create an `Identifier` asset in the Script folder
 
- ![image.png](/img/first-steps-server-identifier.png)
+ ![image.png](img/first-steps-server-identifier.png)
 
 Assign the created Identifier to the Identifier field of the UMI3DCollaborationServer component
 
-![image.png](/img/first-steps-server-identifier-assign.png)
+![image.png](img/first-steps-server-identifier-assign.png)
 
 ### Add a launcher
 
 Create an empty `GameObject` and eventually rename it “UMI3DLauncher”
 
-![image.png](/img/first-steps-launcher-gameobject.png)
+![image.png](img/first-steps-launcher-gameobject.png)
 
 Add a `UMI3DLauncher` component to the GameObject
 
-![image.png](/img/first-steps-launcher-componenent.png)
+![image.png](img/first-steps-launcher-componenent.png)
 
 Tick the Launch Server On Start option
 
-![image.png](/img/first-steps-launcher-tick-start.png)
+![image.png](img/first-steps-launcher-tick-start.png)
 
 ## Define an environment
 
@@ -90,33 +90,33 @@ Tick the Launch Server On Start option
 
 Create an empty `GameObject` and eventually rename it “UMI3DEnv”.
 
-![image.png](/img/first-steps-environment-gameobject.png)
+![image.png](img/first-steps-environment-gameobject.png)
 
 Add a `UMI3DCollaborationEnvironment` component to the GameObject
 
-![image.png](/img/first-steps-environment-component.png)
+![image.png](img/first-steps-environment-component.png)
 
 Fill the Environment Name field as wanted (testGPR in the screenshot)
 
-![image.png](/img/first-steps-environment-name.png)
+![image.png](img/first-steps-environment-name.png)
 
 ### Create a scene
 
 Create an empty `GameObject` under the UMI3DEnv `GameObject` and eventually rename it “Scene”
 
-![image.png](/img/first-steps-environment-scene.png)
+![image.png](img/first-steps-environment-scene.png)
 
 Add a `UMI3DScene` component to this new `GameObject`
 
-![image.png](/img/first-steps-environment-scene-component.png)
+![image.png](img/first-steps-environment-scene-component.png)
 
 Create an empty `GameObject` under the UMI3DEnv GameObject and eventually rename it “SceneEmbo ”
 
-![image.png](/img/first-steps-environment-scene-embodiment.png)
+![image.png](img/first-steps-environment-scene-embodiment.png)
 
 Add a `UMI3DScene` component to this new `GameObject`
 
-![image.png](/img/first-steps-environment-scene-embodiment-componenent.png)
+![image.png](img/first-steps-environment-scene-embodiment-componenent.png)
 
 ## Set up avatars
 
@@ -124,11 +124,11 @@ Add a `UMI3DScene` component to this new `GameObject`
 
 Create a empty `GameObject` and eventually rename it “Perso”
 
-![image.png](/img/first-steps-perso.png)
+![image.png](img/first-steps-perso.png)
 
 Add a `UMI3DModel` component to the GameObject
 
-![image.png](/img/first-steps-model.png)
+![image.png](img/first-steps-model.png)
 
 Set the size of Variants to 1, select Unity_standalone and add the path where the AssetBundle is. In order to have a visual representation of the avatar on the environment, I added the “LoadBundle” component.
 
@@ -138,15 +138,15 @@ Create a prefab of the whole asset in the Prefab folder and remove it from the s
 
 Create an empty `GameObject` and eventually rename it “UMI3DEmboManager”
 
-![image.png](/img/first-steps-embodiment-manager.png)
+![image.png](img/first-steps-embodiment-manager.png)
 
 Add a `UMI3DEmbodimentManager` component to this new `GameObject`
 
-![image.png](/img/first-steps-embodiment-manager-component.png)
+![image.png](img/first-steps-embodiment-manager-component.png)
 
 Assign the `UMI3DScene` of the `GameObject` "SceneEmbo“ to the Embodiments Scene field of the `UMI3DEmbodimentManager` component
 
-![image.png](/img/first-steps-embodiment-scene-assign.png)
+![image.png](img/first-steps-embodiment-scene-assign.png)
 
 Create an AvatarManager script and paste the code below inside.
 
@@ -255,54 +255,54 @@ Create an AvatarManager script and paste the code below inside.
 
 Add a `AvatarManager` component (with the created script) to the “UMI3DEmboManager” `GameObject`
 
-![image.png](/img/first-steps-embodiment-avatar-manager.png)
+![image.png](img/first-steps-embodiment-avatar-manager.png)
 
 Add the « X » prefab in the modelPrefab field of the AvatarManager component
 
-![image.png](/img/first-steps-embodiment-prefab.png)
+![image.png](img/first-steps-embodiment-prefab.png)
 
 Set the size of List Bind List to 1, the size of B List to 1, choose “head” as a BoneType and set the name of the corresponding Bone in the model's structure (“Head” in our case)
 
-![image.png](/img/first-steps-embodiment-bind.png)
+![image.png](img/first-steps-embodiment-bind.png)
 
 ## Support audio
 
 Create an empty `GameObject` and eventually name it “UMI3DAudio”
 
-![image.png](/img/first-steps-audio-gameobject.png)
+![image.png](img/first-steps-audio-gameobject.png)
 
 Add a `UMI3DAudioBridger` component to the `GameObject`
 
-![image.png](/img/first-steps-audio-bridger.png)
+![image.png](img/first-steps-audio-bridger.png)
 
 ## Populate the scene with a 3D asset
 
 Create an empty `GameObject` and eventually name it “obj1” under the “scene” `GameObject`
 
-![image.png](/img/first-steps-model-gameobject.png)  
+![image.png](img/first-steps-model-gameobject.png)  
 
 Add a `UMI3DModel` component to this new `GameObject`
 
-![image.png](/img/first-steps-model-component.png)
+![image.png](img/first-steps-model-component.png)
 
 Select the path of the object, its format and its extension in the corresponding fields
 
-![image.png](/img/first-steps-model-path.png)
+![image.png](img/first-steps-model-path.png)
 
 ## Enrich the experience with interactions
 
 Add a `UMI3DEvent` component to the “obj1” GameObject
 
-![image.png](/img/first-steps-model-event.png)
+![image.png](img/first-steps-model-event.png)
 
 Add a `StringParameter` component to the “obj1” GameObject
 
-![image.png](/img/first-steps-model-event-string.png)
+![image.png](img/first-steps-model-event-string.png)
 
 Add a `UMI3DInteractable` component to the “obj1” GameObject
 
-![image.png](/img/first-steps-model-interactable.png)
+![image.png](img/first-steps-model-interactable.png)
 
 Add a `UMI3DManipulation` component to the “obj1” GameObject
 
-![image.png](/img/first-steps-model-manipulation.png)
+![image.png](img/first-steps-model-manipulation.png)

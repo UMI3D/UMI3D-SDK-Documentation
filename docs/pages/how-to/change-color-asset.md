@@ -4,17 +4,17 @@
 
 Create a Material Scriptable Object.
 
-![image.png](/img/change-color-add-so.png)
+![image.png](img/change-color-add-so.png)
 
 Such as a _Umi3D_External_Material_ or a _Umi3D_PBR_Material_.
 
-![image.png](/img/change-color-pbr.png)
+![image.png](img/change-color-pbr.png)
 
 ## Change color by script
 
 Create a script referencing the object and the material.
 
-![image.png](/img/change-color-reference.png)
+![image.png](img/change-color-reference.png)
 
 ```cs
 using umi3d.edk;

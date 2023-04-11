@@ -6,11 +6,11 @@ Using assets libraries makes it possible to store the required asset for an envi
 
 Create a new asset library as a ScriptableObject
 
-![image.png](/img/group-assets-library-so.png)
+![image.png](img/group-assets-library-so.png)
 
 ## Configure the library
 
-![image.png](/img/group-assets-library-conf.png)
+![image.png](img/group-assets-library-conf.png)
 
 1. Enter the library id. Usually "com.compagny.libraryname"
 2. Click on "Now" to update the data value. It is important to click here when you update your library since browsers always look for new version of libraries based on their date.
