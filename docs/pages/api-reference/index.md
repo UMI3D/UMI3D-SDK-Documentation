@@ -15,7 +15,7 @@ UMI3D is composed of four modules:
 
 More API descriptions to come soon.
 
-![image.png](/img/architecture.png)
+![image.png](./img/architecture.png)
 
 ## Packages
 

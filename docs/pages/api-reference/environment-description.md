@@ -6,7 +6,7 @@ The environment description used in UMI3D relies on the glTF open standard for t
 
 ## Environment
 
-![image.png](img/api-environment-description.png)
+![image.png](./img/api-environment-description.png)
 
 An Environment is the root of the scene graph. It also comprise other essential information such as its name.
 

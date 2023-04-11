@@ -15,7 +15,7 @@ Go on the [GitHub releases](https://github.com/UMI3D/UMI3D-SDK/releases) and fin
 Under "Assets", download the packages files you want to use.
 Note that the source code zips are not required to use UMI3D as thay are already integrated in the packages.
 
-![image.png](img/get-release-sdk.png)
+![image.png](./img/get-release-sdk.png)
 
 ### 3. Import the packages
 
@@ -26,10 +26,10 @@ For each of the following package, drag and drop the file in the Unity project w
 - If you want to create a UMI3D environment: _edk.unitypackage_; or if you want to create a UMI3D browser: _cdk.unitypackage_
 - The complementary modules you want: _interaction-system.unitypackage_, _user-capture.unitypackage_, _collaboration.unitypackage_
 
-![image.png](img/import-packages.png)
+![image.png](./img/import-packages.png)
 
 And import everything.
 
-![image.png](img/import-packages-2.png)
+![image.png](./img/import-packages-2.png)
 
 If you want basic scripts to launch a server, also import the _server-starter-kit.unitypackage_ file.

@@ -6,7 +6,7 @@
 
 Create an "AssetBundle" folder, an "Editor" folder and a "FBX” folder
 
-![image.png](/.attachments/image-fefbfa30-d2ae-4617-b05d-b6962266acb4.png)
+![image.png](./img/)
 
 ### 2. Add the building script
 
