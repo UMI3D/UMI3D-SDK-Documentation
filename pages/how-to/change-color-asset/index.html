@@ -442,15 +442,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-a-materialso" class="md-nav__link">
-    Create a MaterialSO
+  <a href="#define-a-new-material" class="md-nav__link">
+    Define a new Material
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-a-script-referencing-the-object-and-the-material" class="md-nav__link">
-    Create a script referencing the object and the material
+  <a href="#change-color-by-script" class="md-nav__link">
+    Change color by script
   </a>
   
 </li>
@@ -463,8 +463,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#add-operation-and-send-transaction" class="md-nav__link">
-    Add operation and send transaction
+  <a href="#perform-transaction" class="md-nav__link">
+    Perform transaction
   </a>
   
 </li>
@@ -485,7 +485,7 @@
   
     <li class="md-nav__item">
       <a href="../create-asset-bundles/" class="md-nav__link">
-        Create asset bundles
+        Creating Unity AssetBundles
       </a>
     </li>
   
@@ -733,15 +733,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-a-materialso" class="md-nav__link">
-    Create a MaterialSO
+  <a href="#define-a-new-material" class="md-nav__link">
+    Define a new Material
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-a-script-referencing-the-object-and-the-material" class="md-nav__link">
-    Create a script referencing the object and the material
+  <a href="#change-color-by-script" class="md-nav__link">
+    Change color by script
   </a>
   
 </li>
@@ -754,8 +754,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#add-operation-and-send-transaction" class="md-nav__link">
-    Add operation and send transaction
+  <a href="#perform-transaction" class="md-nav__link">
+    Perform transaction
   </a>
   
 </li>
@@ -779,11 +779,13 @@
 
 
 <h1 id="override-the-color-of-an-asset">Override the color of an asset</h1>
-<h2 id="create-a-materialso">Create a MaterialSO</h2>
+<h2 id="define-a-new-material">Define a new Material</h2>
+<p>Create a Material Scriptable Object.</p>
 <p><img alt="image.png" src="/img/change-color-add-so.png" /></p>
 <p>Such as a <em>Umi3D_External_Material</em> or a <em>Umi3D_PBR_Material</em>.</p>
 <p><img alt="image.png" src="/img/change-color-pbr.png" /></p>
-<h2 id="create-a-script-referencing-the-object-and-the-material">Create a script referencing the object and the material</h2>
+<h2 id="change-color-by-script">Change color by script</h2>
+<p>Create a script referencing the object and the material.</p>
 <p><img alt="image.png" src="/img/change-color-reference.png" /></p>
 <div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">umi3d.edk</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
@@ -802,13 +804,14 @@
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="override-the-material">Override the material</h2>
+<p>Override the material by setting a new Material overrider to the object.</p>
 <div class="highlight"><pre><span></span><code><span class="n">Operation</span><span class="w"> </span><span class="n">op</span><span class="p">;</span>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="n">objectMaterialOverriders</span><span class="p">.</span><span class="n">GetValue</span><span class="p">().</span><span class="n">Count</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
 <span class="w">    </span><span class="n">op</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balloonModel</span><span class="p">.</span><span class="n">objectMaterialOverriders</span><span class="p">.</span><span class="n">SetValue</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MaterialOverrider</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">overrideAllMaterial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"> </span><span class="n">newMaterial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newMaterial</span><span class="p">});</span>
 <span class="k">else</span>
 <span class="w">    </span><span class="n">op</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balloonModel</span><span class="p">.</span><span class="n">objectMaterialOverriders</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MaterialOverrider</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">overrideAllMaterial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"> </span><span class="n">newMaterial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newMaterial</span><span class="p">});</span>
 </code></pre></div>
-<h2 id="add-operation-and-send-transaction">Add operation and send transaction</h2>
+<h2 id="perform-transaction">Perform transaction</h2>
 <div class="highlight"><pre><span></span><code><span class="n">Transaction</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">transaction</span><span class="p">()</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="n">reliable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span>

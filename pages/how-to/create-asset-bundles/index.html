@@ -23,7 +23,7 @@
     
     
       
-        <title>Create asset bundles - UMI3D Documentation</title>
+        <title>Creating Unity AssetBundles - UMI3D Documentation</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-prerequisite-creating-unity-assetbundles" class="md-skip">
+        <a href="#creating-unity-assetbundles" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Create asset bundles
+              Creating Unity AssetBundles
             
           </span>
         </div>
@@ -428,14 +428,16 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Create asset bundles
+          Creating Unity AssetBundles
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Create asset bundles
+        Creating Unity AssetBundles
       </a>
       
         
@@ -443,6 +445,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -452,16 +456,51 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-prerequisite-creating-unity-assetbundles" class="md-nav__link">
-    1    Prerequisite: Creating Unity AssetBundles
+  <a href="#creating-an-assetbundle-from-a-fbx-file" class="md-nav__link">
+    Creating an AssetBundle from a FBX file
   </a>
   
-    <nav class="md-nav" aria-label="1    Prerequisite: Creating Unity AssetBundles">
+    <nav class="md-nav" aria-label="Creating an AssetBundle from a FBX file">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#11-creating-an-assetbundle-from-a-fbx-file" class="md-nav__link">
-    1.1 Creating an AssetBundle from a FBX file
+  <a href="#1-setting-up-folders" class="md-nav__link">
+    1. Setting up folders
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-add-the-building-script" class="md-nav__link">
+    2. Add the building script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-import-your-assets" class="md-nav__link">
+    3. Import your assets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-add-your-asset-to-the-bundle" class="md-nav__link">
+    4. Add your asset to the bundle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-build-bundle" class="md-nav__link">
+    5. Build bundle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-load-your-bundle" class="md-nav__link">
+    6. Load your bundle
   </a>
   
 </li>
@@ -711,6 +750,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -719,16 +760,51 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-prerequisite-creating-unity-assetbundles" class="md-nav__link">
-    1    Prerequisite: Creating Unity AssetBundles
+  <a href="#creating-an-assetbundle-from-a-fbx-file" class="md-nav__link">
+    Creating an AssetBundle from a FBX file
   </a>
   
-    <nav class="md-nav" aria-label="1    Prerequisite: Creating Unity AssetBundles">
+    <nav class="md-nav" aria-label="Creating an AssetBundle from a FBX file">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#11-creating-an-assetbundle-from-a-fbx-file" class="md-nav__link">
-    1.1 Creating an AssetBundle from a FBX file
+  <a href="#1-setting-up-folders" class="md-nav__link">
+    1. Setting up folders
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-add-the-building-script" class="md-nav__link">
+    2. Add the building script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-import-your-assets" class="md-nav__link">
+    3. Import your assets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-add-your-asset-to-the-bundle" class="md-nav__link">
+    4. Add your asset to the bundle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-build-bundle" class="md-nav__link">
+    5. Build bundle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-load-your-bundle" class="md-nav__link">
+    6. Load your bundle
   </a>
   
 </li>
@@ -756,17 +832,13 @@
   
 
 
-  <h1>Create asset bundles</h1>
-
-<h2 id="1-prerequisite-creating-unity-assetbundles">1    Prerequisite: Creating Unity AssetBundles</h2>
-<h3 id="11-creating-an-assetbundle-from-a-fbx-file">1.1 Creating an AssetBundle from a FBX file</h3>
-<ol>
-<li>Create an "AssetBundle" folder, an "Editor" folder and a "FBX” folder</li>
-</ol>
+<h1 id="creating-unity-assetbundles">Creating Unity AssetBundles</h1>
+<h2 id="creating-an-assetbundle-from-a-fbx-file">Creating an AssetBundle from a FBX file</h2>
+<h3 id="1-setting-up-folders">1. Setting up folders</h3>
+<p>Create an "AssetBundle" folder, an "Editor" folder and a "FBX” folder</p>
 <p><img alt="image.png" src="/.attachments/image-fefbfa30-d2ae-4617-b05d-b6962266acb4.png" /></p>
-<ol>
-<li>Create a BuildAssetBundle script in the Editor folder and paste the code below inside</li>
-</ol>
+<h3 id="2-add-the-building-script">2. Add the building script</h3>
+<p>Create a BuildAssetBundle script in the Editor folder and paste the code below inside</p>
 <div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">System.Collections</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">UnityEditor</span><span class="p">;</span>
@@ -782,30 +854,20 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<ol>
-<li>
 <p>Replace the path in the code so that it references the path of your “AssetBundle” folder</p>
-</li>
-<li>
+<h3 id="3-import-your-assets">3. Import your assets</h3>
 <p>Copy your FBX file in the “FBX” folder</p>
-</li>
-</ol>
 <p><img alt="image.png" src="/.attachments/image-a825e4bb-06cb-458b-af27-5674cec9c846.png" /></p>
-<ol>
-<li>Select your FBX file and at the bottom of the Inspector view, select “New” in the AssetBundle drop down menu, and give the bundle a name (“avatar” here)</li>
-</ol>
+<h3 id="4-add-your-asset-to-the-bundle">4. Add your asset to the bundle</h3>
+<p>Select your FBX file and at the bottom of the Inspector view, select “New” in the AssetBundle drop down menu, and give the bundle a name (“avatar” here)</p>
 <p><img alt="image.png" src="/.attachments/image-3b17759a-b5df-41c0-b6aa-ccbbb9a29cd3.png" /></p>
-<ol>
-<li>With the FBX file selected, open the “Assets” menu and click on “Build AssetBundles”</li>
-</ol>
+<h3 id="5-build-bundle">5. Build bundle</h3>
+<p>With the FBX file selected, open the “Assets” menu and click on “Build AssetBundles”</p>
 <p><img alt="image.png" src="/.attachments/image-3c00b83d-1066-4037-b8ea-8612979ca110.png" /></p>
-<ol>
-<li>When the build is over, the file will be available in your “AssetBundle” folder</li>
-</ol>
+<p>When the build is over, the file will be available in your “AssetBundle” folder</p>
 <p><img alt="image.png" src="/.attachments/image-81290464-a53e-445f-a53d-c913e1394c15.png" /></p>
-<ol>
-<li>In order to load the AssetBundles, create a <code>LoadBundle</code> script and paste the code below inside</li>
-</ol>
+<h3 id="6-load-your-bundle">6. Load your bundle</h3>
+<p>In order to load the AssetBundles, create a <code>LoadBundle</code> script and paste the code below inside</p>
 <div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">System.Collections</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
