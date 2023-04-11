@@ -1,7 +1,7 @@
 # UMI3D SDK Documentation
 
 ![image.png](./img/umi3d-logo-banner.png#only-light){: style="height:70%;width:70%"}
-![image.png](./img/umi3d-logo-banner-light.png#only-dark){: style="height:200px;"}
+![image.png](./img/umi3d-logo-banner-light.png#only-dark){: style="height:70%;width:70%"}
 
 [:material-download: Download last SDK release](https://github.com/UMI3D/UMI3D-SDK/releases/){ .md-button .md-button--primary }
 [:material-github: View on GitHub](https://github.com/UMI3D/UMI3D-SDK/){ .md-button }
