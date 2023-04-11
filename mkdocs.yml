@@ -7,7 +7,7 @@ repo_url: https://github.com/UMI3D/UMI3D-SDK
 copyright: Copyright 2018-2023 UMI3D Consortium
 
 nav:
-  - "Home" : index.md
+  - Home : index.md
   - "Getting Started":
     - pages/tutorials/index.md
     - pages/tutorials/first-steps-umi3d-edk.md
@@ -18,7 +18,7 @@ nav:
     - pages/how-to/add-a-3d-model.md
     - pages/how-to/move-an-asset-at-runtime.md
     - pages/how-to/change-color-asset.md
-    - pages/how-to/create-asset-bundles.md
+    # - pages/how-to/create-asset-bundles.md
     - pages/how-to/group-assets-library.md
 
   - "API Reference": 
@@ -26,12 +26,11 @@ nav:
     - pages/api-reference/environment-description.md
     - pages/api-reference/environment-synchronization.md
 
-  - "Explanations": 
+  - Explanations: 
     - pages/explanation/index.md
 
-  - Consortium: https://umi3d-consortium.org/
-
   - About:
+    - Consortium: https://umi3d-consortium.org/
     - License: pages/about/license.md
 
 theme:
