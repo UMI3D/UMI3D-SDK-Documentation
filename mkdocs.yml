@@ -15,19 +15,39 @@ nav:
   - "How-to guides": 
     - pages/how-to/index.md
     - pages/how-to/install-sdk.md
-    - pages/how-to/add-a-3d-model.md
-    - pages/how-to/move-an-asset-at-runtime.md
-    - pages/how-to/change-color-asset.md
-    # - pages/how-to/create-asset-bundles.md
-    - pages/how-to/group-assets-library.md
+    - "Assets management":
+      - pages/how-to/add-a-3d-model.md
+      - pages/how-to/move-an-asset-at-runtime.md
+      - pages/how-to/change-color-asset.md
+      # - pages/how-to/create-asset-bundles.md
+      - pages/how-to/group-assets-library.md
+    - Interactions:
+      - pages/how-to/create-a-button.md
+    - "User body tracking":
+      - pages/how-to/add-an-avatar-to-a-user.md
+    - Collaboration:
+      - pages/how-to/provide-audio-chat.md
 
-  - "API Reference": 
+  - "Reference": 
     - pages/api-reference/index.md
-    - pages/api-reference/environment-description.md
-    - pages/api-reference/environment-synchronization.md
+    - "SDK API Reference": https://umi3d.github.io/UMI3D-SDK/index.html
+    - Concepts:
+      - Core:
+        - pages/api-reference/core/environment-description.md
+        - pages/api-reference/core/environment-synchronization.md
+        - pages/api-reference/core/navmesh.md
+      - "Interaction System":
+        - pages/api-reference/interaction-system/tools.md
+      - "User Capture":
+        - pages/api-reference/user-capture/bindings.md
+      - "Collaboration":
+        - pages/api-reference/collaboration/relays.md
 
-  - Explanations: 
+  - Discussions: 
     - pages/explanation/index.md
+    - pages/explanation/scene-description.md
+    - pages/explanation/properties-interpolation.md
+    - pages/explanation/interactions.md
 
   - About:
     - Consortium: https://umi3d-consortium.org/

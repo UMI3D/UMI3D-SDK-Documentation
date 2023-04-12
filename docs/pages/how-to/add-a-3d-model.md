@@ -1,5 +1,7 @@
 # Add a 3D model
 
+To make youre environment rich and intersting, you will surely need some 3D models. Here is a short guide to add one to your environment and place it as you want.
+
 ## Store your 3D asset
 
 ### 1. Define a place of stage
@@ -36,6 +38,10 @@ Open your environment. Under your `UMI3D Scene` node, add an empty object.
 
 Add a `UMI3D Model` component to that node.
 
+!!! note
+
+    Make sure the node with `UMI3D Model` component has all its parents up to the node with the `UMI3D Scene` component having `UMI3D Node` components.
+
 ![image.png](./img/add-3d-model-reference-component.png)
 
 ### 3. Set up variants
@@ -67,7 +73,3 @@ Modify the Transform component on the node that has the `UMI3D Model` component 
 ![image.png](./img/add-3d-model-modify-transform.png)
 
 ![image.png](./img/add-3d-model-modify-transform-screen.png)
-
-## Troubleshooting
-
-Make sure the node with `UMI3D Model` component has all its parents up to the node with the `UMI3D Scene` component having `UMI3D Node` components.

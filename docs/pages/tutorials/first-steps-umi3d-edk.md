@@ -50,7 +50,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "identifier", menuName = "UMI3D/Identifier")]
 public class identifier : IdentifierApi
 {
-    public string pin = "0000";
+    public string pin = "0000"; // (1)
 
     ///<inheritdoc/>
     public override UMI3DAuthenticator GetAuthenticator(ref AuthenticationType type)
@@ -59,6 +59,8 @@ public class identifier : IdentifierApi
     }
 }
 ```
+
+1. You could define any other numeric pin.
 
 Create an `Identifier` asset in the Script folder
 

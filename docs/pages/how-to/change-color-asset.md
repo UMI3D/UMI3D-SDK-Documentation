@@ -1,5 +1,7 @@
 # Override the color of an asset
 
+You can change the color of an asset by overriding its materials by script using UMI3D transactions. Here is a way to achieve this.
+
 ## Define a new Material
 
 Create a Material Scriptable Object.
