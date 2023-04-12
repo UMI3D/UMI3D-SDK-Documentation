@@ -6,20 +6,20 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Documentation for the UMI3D SDK open-source project for cross device web XR experiences development" name="description"/>
-<link href="https://umi3d.fr/pages/how-to/add-a-3d-model/" rel="canonical"/>
-<link href="../install-sdk/" rel="prev"/>
-<link href="../move-an-asset-at-runtime/" rel="next"/>
-<link href="../../../img/favicon.ico" rel="icon"/>
+<link href="https://umi3d.fr/pages/api-reference/core/environment-description/" rel="canonical"/>
+<link href="../../" rel="prev"/>
+<link href="../environment-synchronization/" rel="next"/>
+<link href="../../../../img/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.1.5" name="generator"/>
-<title>Add a 3D model - UMI3D Documentation</title>
-<link href="../../../assets/stylesheets/main.7a7fce14.min.css" rel="stylesheet"/>
-<link href="../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<title>Environment description - UMI3D Documentation</title>
+<link href="../../../../assets/stylesheets/main.7a7fce14.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="../../../stylesheets/extra.css" rel="stylesheet"/>
-<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+<link href="../../../../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -30,14 +30,14 @@
                 body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
                 body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
                 body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-                </style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+                </style><script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="light-blue" data-md-color-primary="cyan" data-md-color-scheme="default" dir="ltr">
 <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#add-a-3d-model">
+<a class="md-skip" href="#environment-description">
           Skip to content
         </a>
 </div>
@@ -45,8 +45,8 @@
 </div>
 <header class="md-header md-header--shadow" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="UMI3D Documentation" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="UMI3D Documentation">
-<img alt="logo" src="../../../img/UMI3D-logo.png"/>
+<a aria-label="UMI3D Documentation" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="UMI3D Documentation">
+<img alt="logo" src="../../../../img/UMI3D-logo.png"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
@@ -61,7 +61,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Add a 3D model
+              Environment description
             
           </span>
 </div>
@@ -105,8 +105,8 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="UMI3D Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="UMI3D Documentation">
-<img alt="logo" src="../../../img/UMI3D-logo.png"/>
+<a aria-label="UMI3D Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../../../.." title="UMI3D Documentation">
+<img alt="logo" src="../../../../img/UMI3D-logo.png"/>
 </a>
     UMI3D Documentation
   </label>
@@ -122,14 +122,14 @@
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../..">
+<a class="md-nav__link" href="../../../..">
         Home
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../tutorials/">Getting Started</a>
+<a href="../../../tutorials/">Getting Started</a>
 <label for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -141,146 +141,61 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../tutorials/first-steps-umi3d-edk/">
+<a class="md-nav__link" href="../../../tutorials/first-steps-umi3d-edk/">
         First steps with the UMI3D Environment Development Kit
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../">How-to guides</a>
+<a href="../../../how-to/">How-to guides</a>
 <label for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
           How-to guides
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../install-sdk/">
+<a class="md-nav__link" href="../../../how-to/install-sdk/">
         Install the UMI3D SDK
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
           Assets management
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_3_3">
 <span class="md-nav__icon md-icon"></span>
           Assets management
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Add a 3D model
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/add-a-3d-model/">
         Add a 3D model
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#store-your-3d-asset">
-    Store your 3D asset
-  </a>
-<nav aria-label="Store your 3D asset" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-define-a-place-of-stage">
-    1. Define a place of stage
-  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2-define-the-storage-access-level">
-    2. Define the storage access level
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-import-your-asset">
-    3. Import your asset
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#reference-it-in-the-scene">
-    Reference it in the scene
-  </a>
-<nav aria-label="Reference it in the scene" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-add-a-new-gameobject">
-    1. Add a new gameobject
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-add-a-model-component">
-    2. Add a Model component
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-set-up-variants">
-    3. Set up variants
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4-set-up-format">
-    4. Set up format
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#modify-its-position-orientation-or-size">
-    Modify its position, orientation or size
-  </a>
-<nav aria-label="Modify its position, orientation or size" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-display-a-local-copy">
-    1. Display a local copy
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-apply-any-transformation">
-    2. Apply any transformation
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../move-an-asset-at-runtime/">
+<a class="md-nav__link" href="../../../how-to/move-an-asset-at-runtime/">
         Change an asset properties at runtime
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../change-color-asset/">
+<a class="md-nav__link" href="../../../how-to/change-color-asset/">
         Override the color of an asset
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../group-assets-library/">
+<a class="md-nav__link" href="../../../how-to/group-assets-library/">
         Group assets in an asset library
       </a>
 </li>
@@ -300,7 +215,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../create-a-button/">
+<a class="md-nav__link" href="../../../how-to/create-a-button/">
         Create a button
       </a>
 </li>
@@ -320,7 +235,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../add-an-avatar-to-a-user/">
+<a class="md-nav__link" href="../../../how-to/add-an-avatar-to-a-user/">
         Add an avatar to a user
       </a>
 </li>
@@ -340,7 +255,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../provide-audio-chat/">
+<a class="md-nav__link" href="../../../how-to/provide-audio-chat/">
         Provide audio chat
       </a>
 </li>
@@ -350,15 +265,15 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../api-reference/">Reference</a>
+<a href="../../">Reference</a>
 <label for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
           Reference
@@ -369,42 +284,95 @@
         SDK API Reference
       </a>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
           Concepts
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<nav aria-expanded="true" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_4_3">
 <span class="md-nav__icon md-icon"></span>
           Concepts
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_4_3_1" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4_3_1" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4_3_1" id="__nav_4_3_1_label" tabindex="0">
           Core
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_4_3_1_label" class="md-nav" data-md-level="3">
+<nav aria-expanded="true" aria-labelledby="__nav_4_3_1_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_4_3_1">
 <span class="md-nav__icon md-icon"></span>
           Core
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../api-reference/core/environment-description/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Environment description
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         Environment description
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gltf-base">
+    glTF base
+  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../api-reference/core/environment-synchronization/">
+<a class="md-nav__link" href="#environment">
+    Environment
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scene">
+    Scene
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3d-assets">
+    3D Assets
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#material">
+    Material
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#animations">
+    Animations
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#shaders">
+    Shaders
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#post-processing-effects">
+    Post-Processing effects
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../environment-synchronization/">
         Environment synchronization
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../api-reference/core/navmesh/">
+<a class="md-nav__link" href="../navmesh/">
         Navigation Mesh
       </a>
 </li>
@@ -424,7 +392,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../api-reference/interaction-system/tools/">
+<a class="md-nav__link" href="../../interaction-system/tools/">
         Tools
       </a>
 </li>
@@ -444,7 +412,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../api-reference/user-capture/bindings/">
+<a class="md-nav__link" href="../../user-capture/bindings/">
         Bindings
       </a>
 </li>
@@ -464,7 +432,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../api-reference/collaboration/relays/">
+<a class="md-nav__link" href="../../collaboration/relays/">
         Relays
       </a>
 </li>
@@ -480,7 +448,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../explanation/">Discussions</a>
+<a href="../../../explanation/">Discussions</a>
 <label for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -492,17 +460,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../explanation/scene-description/">
+<a class="md-nav__link" href="../../../explanation/scene-description/">
         Environment model
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../explanation/properties-interpolation/">
+<a class="md-nav__link" href="../../../explanation/properties-interpolation/">
         Interpolation
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../explanation/interactions/">
+<a class="md-nav__link" href="../../../explanation/interactions/">
         Interaction model
       </a>
 </li>
@@ -527,7 +495,7 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../about/license/">
+<a class="md-nav__link" href="../../../about/license/">
         License
       </a>
 </li>
@@ -549,76 +517,44 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#store-your-3d-asset">
-    Store your 3D asset
-  </a>
-<nav aria-label="Store your 3D asset" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-define-a-place-of-stage">
-    1. Define a place of stage
+<a class="md-nav__link" href="#gltf-base">
+    glTF base
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2-define-the-storage-access-level">
-    2. Define the storage access level
+<a class="md-nav__link" href="#environment">
+    Environment
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#3-import-your-asset">
-    3. Import your asset
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#reference-it-in-the-scene">
-    Reference it in the scene
-  </a>
-<nav aria-label="Reference it in the scene" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-add-a-new-gameobject">
-    1. Add a new gameobject
+<a class="md-nav__link" href="#scene">
+    Scene
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2-add-a-model-component">
-    2. Add a Model component
+<a class="md-nav__link" href="#3d-assets">
+    3D Assets
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#3-set-up-variants">
-    3. Set up variants
+<a class="md-nav__link" href="#material">
+    Material
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#4-set-up-format">
-    4. Set up format
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#modify-its-position-orientation-or-size">
-    Modify its position, orientation or size
-  </a>
-<nav aria-label="Modify its position, orientation or size" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-display-a-local-copy">
-    1. Display a local copy
+<a class="md-nav__link" href="#animations">
+    Animations
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2-apply-any-transformation">
-    2. Apply any transformation
+<a class="md-nav__link" href="#shaders">
+    Shaders
   </a>
 </li>
-</ul>
-</nav>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#post-processing-effects">
+    Post-Processing effects
+  </a>
 </li>
 </ul>
 </nav>
@@ -627,46 +563,62 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="add-a-3d-model">Add a 3D model</h1>
-<p>To make youre environment rich and intersting, you will surely need some 3D models. Here is a short guide to add one to your environment and place it as you want.</p>
-<h2 id="store-your-3d-asset">Store your 3D asset</h2>
-<h3 id="1-define-a-place-of-stage">1. Define a place of stage</h3>
-<p>Find the "/data" folder at the root of your project.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/add-3d-model-store.png"><img alt="image.png" src="../img/add-3d-model-store.png"/></a></p>
-<p>You should create the folder if you do not have it.</p>
-<h3 id="2-define-the-storage-access-level">2. Define the storage access level</h3>
-<p>Choose whether your file should be publicly available or not by choosing the corresponding folder.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/add-3d-model-store-private.png"><img alt="image.png" src="../img/add-3d-model-store-private.png"/></a></p>
-<p>You should create the folders if you do not have them.</p>
-<h3 id="3-import-your-asset">3. Import your asset</h3>
-<p>Add your 3D assets to any subfolder of your choice.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/add-3d-model-store-assets.png"><img alt="image.png" src="../img/add-3d-model-store-assets.png"/></a></p>
-<h2 id="reference-it-in-the-scene">Reference it in the scene</h2>
-<h3 id="1-add-a-new-gameobject">1. Add a new gameobject</h3>
-<p>Open your environment. Under your <code>UMI3D Scene</code> node, add an empty object.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/add-3d-model-reference-gameobject.png"><img alt="image.png" src="../img/add-3d-model-reference-gameobject.png"/></a></p>
-<h3 id="2-add-a-model-component">2. Add a Model component</h3>
-<p>Add a <code>UMI3D Model</code> component to that node.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Make sure the node with <code>UMI3D Model</code> component has all its parents up to the node with the <code>UMI3D Scene</code> component having <code>UMI3D Node</code> components.</p>
-</div>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/add-3d-model-reference-component.png"><img alt="image.png" src="../img/add-3d-model-reference-component.png"/></a></p>
-<h3 id="3-set-up-variants">3. Set up variants</h3>
-<p>Unwrap the <em>variants</em> parameters and set the size value to 1 to add a variant</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/add-3d-model-reference-variant.png"><img alt="image.png" src="../img/add-3d-model-reference-variant.png"/></a></p>
-<h3 id="4-set-up-format">4. Set up format</h3>
-<p>Set up the format to the one of the model to link, check the <em>Is a local file</em> checkbox, and browse in your file explorer towards the desired 3D model.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/add-3d-model-reference-format.png"><img alt="image.png" src="../img/add-3d-model-reference-format.png"/></a></p>
-<h2 id="modify-its-position-orientation-or-size">Modify its position, orientation or size</h2>
-<h3 id="1-display-a-local-copy">1. Display a local copy</h3>
-<p>Add an import of the model through Unity to see your model in the editor.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/add-3d-model-modify-local-copy.png"><img alt="image.png" src="../img/add-3d-model-modify-local-copy.png"/></a></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/add-3d-model-modify-local-copy-screen.png"><img alt="image.png" src="../img/add-3d-model-modify-local-copy-screen.png"/></a></p>
-<h3 id="2-apply-any-transformation">2. Apply any transformation</h3>
-<p>Modify the Transform component on the node that has the <code>UMI3D Model</code> component attached. Here, the scale is reduced to (0.25, 0.25, 0,25).</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/add-3d-model-modify-transform.png"><img alt="image.png" src="../img/add-3d-model-modify-transform.png"/></a></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/add-3d-model-modify-transform-screen.png"><img alt="image.png" src="../img/add-3d-model-modify-transform-screen.png"/></a></p>
+<h1 id="environment-description">Environment description</h1>
+<h2 id="gltf-base">glTF base</h2>
+<p>The environment description used in UMI3D relies on the <a href="https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html">glTF open standard</a> for three-dimmensional scenes and models desscription, from the Khronos Group. The glTF standard represent an environment as a tree of nodes, that may possess differents properties (better known as components). The glTF standard admits extensions to properties, to extend their abilities. A such, each UMI3D component is an extension of a glTF property.</p>
+<h2 id="environment">Environment</h2>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/api-environment-description.png"><img alt="image.png" src="../img/api-environment-description.png"/></a></p>
+<p>An Environment is the root of the scene graph. It also comprise other essential information such as its name.</p>
+<h2 id="scene">Scene</h2>
+<p>An Environment can possess several scene that could be displayed at one. From and including the scene, each child node has its own transform component (a position and a rotation)</p>
+<h2 id="3d-assets">3D Assets</h2>
+<p>UMI3D provides extensions for a lot of usual 3D assets that are node components (Models, Meshes, Lights, Canvas...).</p>
+<ul>
+<li>3D Rendered<ul>
+<li>Line</li>
+<li>Mesh</li>
+<li>Model</li>
+<li>Submodel</li>
+</ul>
+</li>
+<li>UI<ul>
+<li>Canvas</li>
+<li>Rect</li>
+<li>Text</li>
+<li>Image</li>
+</ul>
+</li>
+<li>Other<ul>
+<li>Light</li>
+</ul>
+</li>
+</ul>
+<h2 id="material">Material</h2>
+<p>Materials could be added to the environment to be used by other assets.</p>
+<p>Suported Materials are</p>
+<ul>
+<li>PBR materials</li>
+<li>External materials</li>
+</ul>
+<h2 id="animations">Animations</h2>
+<p>An animation is the description of any playable sequence of a media. Node animation thus moves nodes while video and audio animation based on specific ressources can also be played.</p>
+<p>Supported animation are</p>
+<ul>
+<li>Video</li>
+<li>Audio</li>
+<li>3D movement animation</li>
+<li>Animation through animators</li>
+</ul>
+<h2 id="shaders">Shaders</h2>
+<p>Shaders with custom properties are supported.</p>
+<h2 id="post-processing-effects">Post-Processing effects</h2>
+<p>Post-Processing effects are packaged with the environment to tell the browser to execute them if possible.</p>
+<p>Currently supported post-processing effects are</p>
+<ul>
+<li>Deferred fog</li>
+<li>Global bloom</li>
+<li>Global vignette</li>
+</ul>
 </article>
 </div>
 </div>
@@ -692,7 +644,7 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.path", "navigation.instant", "navigation.indexes", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../assets/javascripts/bundle.407015b8.min.js"></script>
+<script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.path", "navigation.instant", "navigation.indexes", "content.code.copy", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../../assets/javascripts/bundle.407015b8.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

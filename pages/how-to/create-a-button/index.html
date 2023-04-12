@@ -6,12 +6,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Documentation for the UMI3D SDK open-source project for cross device web XR experiences development" name="description"/>
-<link href="https://umi3d.fr/pages/how-to/add-a-3d-model/" rel="canonical"/>
-<link href="../install-sdk/" rel="prev"/>
-<link href="../move-an-asset-at-runtime/" rel="next"/>
+<link href="https://umi3d.fr/pages/how-to/create-a-button/" rel="canonical"/>
+<link href="../group-assets-library/" rel="prev"/>
+<link href="../add-an-avatar-to-a-user/" rel="next"/>
 <link href="../../../img/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.1.5" name="generator"/>
-<title>Add a 3D model - UMI3D Documentation</title>
+<title>Create a button - UMI3D Documentation</title>
 <link href="../../../assets/stylesheets/main.7a7fce14.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -37,7 +37,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#add-a-3d-model">
+<a class="md-skip" href="#create-a-button">
           Skip to content
         </a>
 </div>
@@ -61,7 +61,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Add a 3D model
+              Create a button
             
           </span>
 </div>
@@ -167,107 +167,22 @@
         Install the UMI3D SDK
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
           Assets management
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_3_3">
 <span class="md-nav__icon md-icon"></span>
           Assets management
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Add a 3D model
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../add-a-3d-model/">
         Add a 3D model
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#store-your-3d-asset">
-    Store your 3D asset
-  </a>
-<nav aria-label="Store your 3D asset" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-define-a-place-of-stage">
-    1. Define a place of stage
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-define-the-storage-access-level">
-    2. Define the storage access level
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-import-your-asset">
-    3. Import your asset
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#reference-it-in-the-scene">
-    Reference it in the scene
-  </a>
-<nav aria-label="Reference it in the scene" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-add-a-new-gameobject">
-    1. Add a new gameobject
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-add-a-model-component">
-    2. Add a Model component
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-set-up-variants">
-    3. Set up variants
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4-set-up-format">
-    4. Set up format
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#modify-its-position-orientation-or-size">
-    Modify its position, orientation or size
-  </a>
-<nav aria-label="Modify its position, orientation or size" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-display-a-local-copy">
-    1. Display a local copy
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-apply-any-transformation">
-    2. Apply any transformation
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../move-an-asset-at-runtime/">
@@ -287,20 +202,21 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_4" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_4" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
           Interactions
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_3_4_label" class="md-nav" data-md-level="2">
+<nav aria-expanded="true" aria-labelledby="__nav_3_4_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_3_4">
 <span class="md-nav__icon md-icon"></span>
           Interactions
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../create-a-button/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="./">
         Create a button
       </a>
 </li>
@@ -543,130 +459,13 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#store-your-3d-asset">
-    Store your 3D asset
-  </a>
-<nav aria-label="Store your 3D asset" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-define-a-place-of-stage">
-    1. Define a place of stage
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-define-the-storage-access-level">
-    2. Define the storage access level
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-import-your-asset">
-    3. Import your asset
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#reference-it-in-the-scene">
-    Reference it in the scene
-  </a>
-<nav aria-label="Reference it in the scene" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-add-a-new-gameobject">
-    1. Add a new gameobject
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-add-a-model-component">
-    2. Add a Model component
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-set-up-variants">
-    3. Set up variants
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4-set-up-format">
-    4. Set up format
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#modify-its-position-orientation-or-size">
-    Modify its position, orientation or size
-  </a>
-<nav aria-label="Modify its position, orientation or size" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-display-a-local-copy">
-    1. Display a local copy
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-apply-any-transformation">
-    2. Apply any transformation
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="add-a-3d-model">Add a 3D model</h1>
-<p>To make youre environment rich and intersting, you will surely need some 3D models. Here is a short guide to add one to your environment and place it as you want.</p>
-<h2 id="store-your-3d-asset">Store your 3D asset</h2>
-<h3 id="1-define-a-place-of-stage">1. Define a place of stage</h3>
-<p>Find the "/data" folder at the root of your project.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/add-3d-model-store.png"><img alt="image.png" src="../img/add-3d-model-store.png"/></a></p>
-<p>You should create the folder if you do not have it.</p>
-<h3 id="2-define-the-storage-access-level">2. Define the storage access level</h3>
-<p>Choose whether your file should be publicly available or not by choosing the corresponding folder.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/add-3d-model-store-private.png"><img alt="image.png" src="../img/add-3d-model-store-private.png"/></a></p>
-<p>You should create the folders if you do not have them.</p>
-<h3 id="3-import-your-asset">3. Import your asset</h3>
-<p>Add your 3D assets to any subfolder of your choice.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/add-3d-model-store-assets.png"><img alt="image.png" src="../img/add-3d-model-store-assets.png"/></a></p>
-<h2 id="reference-it-in-the-scene">Reference it in the scene</h2>
-<h3 id="1-add-a-new-gameobject">1. Add a new gameobject</h3>
-<p>Open your environment. Under your <code>UMI3D Scene</code> node, add an empty object.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/add-3d-model-reference-gameobject.png"><img alt="image.png" src="../img/add-3d-model-reference-gameobject.png"/></a></p>
-<h3 id="2-add-a-model-component">2. Add a Model component</h3>
-<p>Add a <code>UMI3D Model</code> component to that node.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Make sure the node with <code>UMI3D Model</code> component has all its parents up to the node with the <code>UMI3D Scene</code> component having <code>UMI3D Node</code> components.</p>
-</div>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/add-3d-model-reference-component.png"><img alt="image.png" src="../img/add-3d-model-reference-component.png"/></a></p>
-<h3 id="3-set-up-variants">3. Set up variants</h3>
-<p>Unwrap the <em>variants</em> parameters and set the size value to 1 to add a variant</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/add-3d-model-reference-variant.png"><img alt="image.png" src="../img/add-3d-model-reference-variant.png"/></a></p>
-<h3 id="4-set-up-format">4. Set up format</h3>
-<p>Set up the format to the one of the model to link, check the <em>Is a local file</em> checkbox, and browse in your file explorer towards the desired 3D model.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/add-3d-model-reference-format.png"><img alt="image.png" src="../img/add-3d-model-reference-format.png"/></a></p>
-<h2 id="modify-its-position-orientation-or-size">Modify its position, orientation or size</h2>
-<h3 id="1-display-a-local-copy">1. Display a local copy</h3>
-<p>Add an import of the model through Unity to see your model in the editor.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/add-3d-model-modify-local-copy.png"><img alt="image.png" src="../img/add-3d-model-modify-local-copy.png"/></a></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/add-3d-model-modify-local-copy-screen.png"><img alt="image.png" src="../img/add-3d-model-modify-local-copy-screen.png"/></a></p>
-<h3 id="2-apply-any-transformation">2. Apply any transformation</h3>
-<p>Modify the Transform component on the node that has the <code>UMI3D Model</code> component attached. Here, the scale is reduced to (0.25, 0.25, 0,25).</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/add-3d-model-modify-transform.png"><img alt="image.png" src="../img/add-3d-model-modify-transform.png"/></a></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/add-3d-model-modify-transform-screen.png"><img alt="image.png" src="../img/add-3d-model-modify-transform-screen.png"/></a></p>
+<h1 id="create-a-button">Create a button</h1>
 </article>
 </div>
 </div>

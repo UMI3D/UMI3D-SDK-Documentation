@@ -2,122 +2,152 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://umi3d.fr/</loc>
-         <lastmod>2023-04-11</lastmod>
+         <lastmod>2023-04-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://umi3d.fr/pages/about/license/</loc>
-         <lastmod>2023-04-11</lastmod>
+         <lastmod>2023-04-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://umi3d.fr/pages/api-reference/</loc>
-         <lastmod>2023-04-11</lastmod>
+         <lastmod>2023-04-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://umi3d.fr/pages/api-reference/environment-description/</loc>
-         <lastmod>2023-04-11</lastmod>
+         <loc>https://umi3d.fr/pages/api-reference/collaboration/relays/</loc>
+         <lastmod>2023-04-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://umi3d.fr/pages/api-reference/environment-synchronization/</loc>
-         <lastmod>2023-04-11</lastmod>
+         <loc>https://umi3d.fr/pages/api-reference/core/environment-description/</loc>
+         <lastmod>2023-04-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://umi3d.fr/pages/api-reference/core/environment-synchronization/</loc>
+         <lastmod>2023-04-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://umi3d.fr/pages/api-reference/core/navmesh/</loc>
+         <lastmod>2023-04-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://umi3d.fr/pages/api-reference/interaction-system/tools/</loc>
+         <lastmod>2023-04-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://umi3d.fr/pages/api-reference/user-capture/bindings/</loc>
+         <lastmod>2023-04-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://umi3d.fr/pages/explanation/</loc>
-         <lastmod>2023-04-11</lastmod>
+         <lastmod>2023-04-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://umi3d.fr/pages/explanation/interactions-design/</loc>
-         <lastmod>2023-04-11</lastmod>
+         <lastmod>2023-04-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://umi3d.fr/pages/explanation/interactions-feedbacks/</loc>
-         <lastmod>2023-04-11</lastmod>
+         <lastmod>2023-04-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://umi3d.fr/pages/explanation/interactions-mapping/</loc>
-         <lastmod>2023-04-11</lastmod>
+         <lastmod>2023-04-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://umi3d.fr/pages/explanation/interactions/</loc>
-         <lastmod>2023-04-11</lastmod>
+         <lastmod>2023-04-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://umi3d.fr/pages/explanation/properties-interpolation/</loc>
-         <lastmod>2023-04-11</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://umi3d.fr/pages/explanation/relays/</loc>
-         <lastmod>2023-04-11</lastmod>
+         <lastmod>2023-04-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://umi3d.fr/pages/explanation/scene-description/</loc>
-         <lastmod>2023-04-11</lastmod>
+         <lastmod>2023-04-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://umi3d.fr/pages/explanation/scene-synchronization/</loc>
-         <lastmod>2023-04-11</lastmod>
+         <lastmod>2023-04-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://umi3d.fr/pages/explanation/tracking/</loc>
-         <lastmod>2023-04-11</lastmod>
+         <lastmod>2023-04-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://umi3d.fr/pages/how-to/</loc>
-         <lastmod>2023-04-11</lastmod>
+         <lastmod>2023-04-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://umi3d.fr/pages/how-to/add-a-3d-model/</loc>
-         <lastmod>2023-04-11</lastmod>
+         <lastmod>2023-04-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://umi3d.fr/pages/how-to/add-an-avatar-to-a-user/</loc>
+         <lastmod>2023-04-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://umi3d.fr/pages/how-to/change-color-asset/</loc>
-         <lastmod>2023-04-11</lastmod>
+         <lastmod>2023-04-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://umi3d.fr/pages/how-to/create-a-button/</loc>
+         <lastmod>2023-04-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://umi3d.fr/pages/how-to/create-asset-bundles/</loc>
-         <lastmod>2023-04-11</lastmod>
+         <lastmod>2023-04-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://umi3d.fr/pages/how-to/group-assets-library/</loc>
-         <lastmod>2023-04-11</lastmod>
+         <lastmod>2023-04-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://umi3d.fr/pages/how-to/install-sdk/</loc>
-         <lastmod>2023-04-11</lastmod>
+         <lastmod>2023-04-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://umi3d.fr/pages/how-to/move-an-asset-at-runtime/</loc>
-         <lastmod>2023-04-11</lastmod>
+         <lastmod>2023-04-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://umi3d.fr/pages/how-to/provide-audio-chat/</loc>
+         <lastmod>2023-04-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://umi3d.fr/pages/tutorials/</loc>
-         <lastmod>2023-04-11</lastmod>
+         <lastmod>2023-04-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://umi3d.fr/pages/tutorials/first-steps-umi3d-edk/</loc>
-         <lastmod>2023-04-11</lastmod>
+         <lastmod>2023-04-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
