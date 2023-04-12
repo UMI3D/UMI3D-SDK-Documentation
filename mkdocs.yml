@@ -120,6 +120,10 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
+  
+  
 
   - pymdownx.emoji:
       #already referenced in material plugin:
