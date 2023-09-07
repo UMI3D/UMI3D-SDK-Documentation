@@ -23,8 +23,8 @@ nav:
       - pages/how-to/group-assets-library.md
     - Interactions:
       - pages/how-to/create-a-button.md
-    #- "User body tracking":
-    #  - pages/how-to/add-an-avatar-to-a-user.md
+    - "User Body Tracking":
+      - pages/how-to/put-a-model-in-a-users-hand.md
     #- Collaboration:
     #  - pages/how-to/provide-audio-chat.md
 

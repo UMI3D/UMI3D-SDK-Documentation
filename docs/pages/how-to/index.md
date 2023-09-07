@@ -13,4 +13,6 @@ This sections contains a number of small guides that can be thought as recipes i
     - [Group assets in an asset library](./group-assets-library.md)
 - Interactions
     - [Create a button](./create-a-button.md)
+- User Body Tracking
+    - [Put a model in a user's hand](./put-a-model-in-a-users-hand.md)
 
