@@ -6,11 +6,11 @@ This section contains precise details on technical implementations.
 
     More API descriptions to come soon.
 
-## Generated documentation
+## Generated API Reference
 
 Automatically generated documentation from code details all classes, methods and fields in the SDK.
 
-[:material-book-open-variant: Access code documentation](https://umi3d.github.io/UMI3D-SDK/index.html){ .md-button }
+[:material-book-open-variant: Access API reference](https://umi3d.github.io/UMI3D-SDK/index.html){ .md-button }
 
 ## Modules
 

@@ -23,10 +23,10 @@ nav:
       - pages/how-to/group-assets-library.md
     - Interactions:
       - pages/how-to/create-a-button.md
-    - "User body tracking":
-      - pages/how-to/add-an-avatar-to-a-user.md
-    - Collaboration:
-      - pages/how-to/provide-audio-chat.md
+    #- "User body tracking":
+    #  - pages/how-to/add-an-avatar-to-a-user.md
+    #- Collaboration:
+    #  - pages/how-to/provide-audio-chat.md
 
   - "Reference": 
     - pages/api-reference/index.md

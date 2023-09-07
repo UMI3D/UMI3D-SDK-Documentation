@@ -13,7 +13,4 @@ This sections contains a number of small guides that can be thought as recipes i
     - [Group assets in an asset library](./group-assets-library.md)
 - Interactions
     - [Create a button](./create-a-button.md)
-- User body tracking
-    - [Add a avatar to a user](./add-an-avatar-to-a-user.md)
-- Collaboration
-    - [Provide audio chat](./provide-audio-chat.md)
+
