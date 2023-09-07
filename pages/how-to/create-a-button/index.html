@@ -8,7 +8,7 @@
 <meta content="Documentation for the UMI3D SDK open-source project for cross device web XR experiences development" name="description"/>
 <link href="https://umi3d.fr/pages/how-to/create-a-button/" rel="canonical"/>
 <link href="../group-assets-library/" rel="prev"/>
-<link href="../add-an-avatar-to-a-user/" rel="next"/>
+<link href="../../api-reference/" rel="next"/>
 <link href="../../../img/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.1.5" name="generator"/>
 <title>Create a button - UMI3D Documentation</title>
@@ -246,49 +246,59 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Create a button
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         Create a button
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#set-up-an-interactable-object">
+    Set up an interactable object
+  </a>
+<nav aria-label="Set up an interactable object" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-add-a-collider">
+    1. Add a collider
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-make-the-object-interactable">
+    2. Make the object interactable
+  </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
-          User body tracking
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_3_5_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_3_5">
-<span class="md-nav__icon md-icon"></span>
-          User body tracking
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../add-an-avatar-to-a-user/">
-        Add an avatar to a user
-      </a>
+<a class="md-nav__link" href="#add-the-trigger-interaction">
+    Add the trigger interaction
+  </a>
+<nav aria-label="Add the trigger interaction" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-create-the-event">
+    1. Create the event
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-define-custom-behaviour">
+    2. Define custom behaviour
+  </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_6" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
-          Collaboration
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_3_6_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_3_6">
-<span class="md-nav__icon md-icon"></span>
-          Collaboration
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../provide-audio-chat/">
-        Provide audio chat
-      </a>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -489,6 +499,50 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#set-up-an-interactable-object">
+    Set up an interactable object
+  </a>
+<nav aria-label="Set up an interactable object" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-add-a-collider">
+    1. Add a collider
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-make-the-object-interactable">
+    2. Make the object interactable
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#add-the-trigger-interaction">
+    Add the trigger interaction
+  </a>
+<nav aria-label="Add the trigger interaction" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-create-the-event">
+    1. Create the event
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-define-custom-behaviour">
+    2. Define custom behaviour
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -496,6 +550,73 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="create-a-button">Create a button</h1>
+<p>Add interactivity to your environment by using the interaction system to make a simple button.</p>
+<h2 id="set-up-an-interactable-object">Set up an interactable object</h2>
+<h3 id="1-add-a-collider">1. Add a collider</h3>
+<p>Take that object you want to be interactable on trigger when the user points towards it. It should be an object with a UMI3DModel component on it. Enable the property "has a collider".</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/create-a-button-enable-collider.png"><img alt="image.png" src="../img/create-a-button-enable-collider.png"/></a></p>
+<h3 id="2-make-the-object-interactable">2. Make the object interactable</h3>
+<p>Add an UMI3DInteractable component to the object.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/create-a-button-add-interactable.png"><img alt="image.png" src="../img/create-a-button-add-interactable.png"/></a></p>
+<h2 id="add-the-trigger-interaction">Add the trigger interaction</h2>
+<h3 id="1-create-the-event">1. Create the event</h3>
+<p>Add a UMI3DEvent component to the object.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/create-a-button-add-event.png"><img alt="image.png" src="../img/create-a-button-add-event.png"/></a></p>
+<p>And reference it in the interactions list of the UMI3DInteractable component.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/create-a-button-reference-event.png"><img alt="image.png" src="../img/create-a-button-reference-event.png"/></a></p>
+<h3 id="2-define-custom-behaviour">2. Define custom behaviour</h3>
+<p>Add a new script to the object and write down the code to execute when a user triggers the button. Here is an example.</p>
+<div class="language-cs highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">umi3d.edk</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="k">using</span><span class="w"> </span><span class="nn">static</span><span class="w"> </span><span class="n">umi3d</span><span class="p">.</span><span class="n">edk</span><span class="p">.</span><span class="n">interaction</span><span class="p">.</span><span class="n">AbstractInteraction</span><span class="p">;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ButtonAction</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">MonoBehaviour</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="p">{</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="n">UMI3DModel</span><span class="w"> </span><span class="n">buttonModel</span><span class="p">;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Start</span><span class="p">()</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">        </span><span class="n">buttonModel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">UMI3DModel</span><span class="o">&gt;</span><span class="p">();</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Press</span><span class="p">(</span><span class="n">InteractionEventContent</span><span class="w"> </span><span class="n">content</span><span class="p">)</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">        </span><span class="n">buttonModel</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">Translate</span><span class="p">(</span><span class="o">-</span><span class="m">0.01f</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Vector3</span><span class="p">.</span><span class="n">up</span><span class="p">);</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">        </span><span class="n">Transaction</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">();</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="w">        </span><span class="n">t</span><span class="p">.</span><span class="n">AddIfNotNull</span><span class="p">(</span><span class="n">buttonModel</span><span class="p">.</span><span class="n">objectPosition</span><span class="p">.</span><span class="n">SetValue</span><span class="p">(</span><span class="n">content</span><span class="p">.</span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">buttonModel</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">localPosition</span><span class="p">));</span><span class="w"> </span><span class="c1">// content.user is the user that triggered the button</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="w">        </span><span class="n">t</span><span class="p">.</span><span class="n">Dispatch</span><span class="p">();</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>The <em>Press</em> method will be the method executed when an interaction with the button occurs. Context information is available in the event content parameter.</p>
+<p>Configure the method to be triggered when a user click on the button in the Unity Inspector.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/create-a-button-set-event-method.png"><img alt="image.png" src="../img/create-a-button-set-event-method.png"/></a></p>
 </article>
 </div>
 </div>
