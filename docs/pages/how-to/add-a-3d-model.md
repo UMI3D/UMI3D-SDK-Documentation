@@ -1,6 +1,6 @@
 # Add a 3D model
 
-To make youre environment rich and intersting, you will surely need some 3D models. Here is a short guide to add one to your environment and place it as you want.
+To make your environment rich and interesting, you will surely need some 3D models. Here is a short guide to add one to your environment and place it as you want.
 
 ## Store your 3D asset
 

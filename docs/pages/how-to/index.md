@@ -15,4 +15,6 @@ This sections contains a number of small guides that can be thought as recipes i
     - [Create a button](./create-a-button.md)
 - User Body Tracking
     - [Put a model in a user's hand](./put-a-model-in-a-users-hand.md)
-
+    - [Set an avatar for a user](./add-an-avatar-to-a-user.md)
+    - [Animate a user avatar on movement](./add-an-avatar-to-a-user.md)
+    - [Provide emotes to users](./add-emotes.md)

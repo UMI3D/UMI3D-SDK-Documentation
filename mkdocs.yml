@@ -25,6 +25,9 @@ nav:
       - pages/how-to/create-a-button.md
     - "User Body Tracking":
       - pages/how-to/put-a-model-in-a-users-hand.md
+      - pages/how-to/add-an-avatar-to-a-user.md
+      - pages/how-to/animate-avatar-on-user-movement.md
+      - pages/how-to/add-emotes.md
     #- Collaboration:
     #  - pages/how-to/provide-audio-chat.md
 
